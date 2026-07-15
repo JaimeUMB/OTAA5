@@ -51,7 +51,7 @@ img{max-width:100%;display:block}
 [data-theme="dark"]{
   --bg:#191917;--bg-2:#222220;--bg-3:#2c2c2a;
   --text:#f0f0ee;--text-2:#9b9b99;--text-3:#6b6b6a;
-  --border:#333331;
+  --border:rgba(255,255,255,0.08);
 }
 
 /* ── BASE ───────────────────────────────────────────── */
@@ -363,7 +363,7 @@ a{text-decoration:none;color:inherit}
 .day-popover{
   position:fixed;z-index:2000;width:232px;
   background:var(--bg-2);border:1px solid var(--border);
-  border-radius:14px;box-shadow:var(--shadow-lg);
+  border-radius:14px;box-shadow: var(--shadow-lg);
   padding:16px;
   animation:pop-in 130ms cubic-bezier(.16,1,.3,1);
 }
@@ -434,7 +434,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── RPE SLIDER ─────────────────────────────────────── */
 .rpe-slider{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:3px;background:var(--bg-3);outline:none;margin:6px 0}
-.rpe-slider::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.rpe-slider::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);cursor:pointer;box-shadow: 0 2px 6px rgba(0,0,0,.2)}
 .rpe-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--accent);cursor:pointer;border:none}
 .rpe-lbls{position:relative;height:14px;font-size:10px;color:var(--text-3);margin-top:4px}.rpe-lbls span{position:absolute;transform:translateX(-50%)}.rpe-lbls span:first-child{left:0;transform:none}.rpe-lbls span:last-child{right:0;transform:none}
 
@@ -445,7 +445,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   border:none;background:transparent;color:var(--text-2);border-radius:var(--radius-sm);
   cursor:pointer;transition:all 140ms ease;
 }
-.tab-btn.active{background:var(--bg);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.tab-btn.active{background:var(--bg);color:var(--text);box-shadow: 0 1px 4px rgba(0,0,0,.08)}
 
 /* ── BUTTONS ────────────────────────────────────────── */
 .btn{
@@ -527,7 +527,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   transition:all 140ms ease;position:relative;
 }
 .cal-day:hover{opacity:.8}
-.cal-day.today{box-shadow:inset 0 0 0 1.5px var(--accent)}
+.cal-day.today{box-shadow: inset 0 0 0 1.5px var(--accent)}
 .cal-day.empty{cursor:default}
 .cal-day-n{font-size:12px;font-weight:600;color:var(--text);z-index:1}
 .cal-day-dot{width:5px;height:5px;border-radius:50%;margin-top:2px}
@@ -596,7 +596,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   background:var(--success);color:#fff;padding:9px 18px;border-radius:100px;
   font-size:13px;font-weight:600;display:flex;align-items:center;gap:7px;z-index:500;
   transition:transform 360ms cubic-bezier(.34,1.56,.64,1);white-space:nowrap;
-  box-shadow:0 4px 16px rgba(61,153,112,.3);
+  box-shadow: none;
 }
 #toast.show{transform:translateX(-50%) scale(1)}
 @media(min-width:769px){#toast{bottom:24px}}
@@ -722,7 +722,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   display:flex;flex-direction:column;justify-content:space-between;
   height:100%;
 }
-.arc-day-cell.arc-today{box-shadow:inset 0 0 0 1.5px var(--accent);}
+.arc-day-cell.arc-today{box-shadow: inset 0 0 0 1.5px var(--accent);}
 
 /* Day cell header */
 .arc-day-hdr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
@@ -1047,7 +1047,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .tsk-detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
 .tsk-detail-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;padding:0 16px;border-radius:12px;font-size:13px;font-weight:700;font-family:var(--font-ui);letter-spacing:.01em;cursor:pointer;transition:all 140ms ease;border:1px solid var(--border)}
 .tsk-detail-btn svg{width:15px;height:15px;flex-shrink:0}
-.tsk-detail-btn.done-btn{background:linear-gradient(135deg,color-mix(in oklab,var(--accent) 14%,var(--bg-2)) 0%,var(--bg-2) 78%);border-color:color-mix(in oklab,var(--accent) 28%,var(--border));color:var(--accent)}
+.tsk-detail-btn.done-btn{background:color-mix(in oklab,var(--accent) 14%,var(--bg-2));border-color:color-mix(in oklab,var(--accent) 28%,var(--border));color:var(--accent)}
 .tsk-detail-btn.done-btn:hover{background:color-mix(in oklab,var(--accent) 10%,var(--bg-3))}
 .tsk-detail-btn.delete-btn{background:color-mix(in oklab,#ef4444 7%,var(--bg-2));border-color:color-mix(in oklab,#ef4444 22%,var(--border));color:#ef4444}
 .tsk-detail-btn.delete-btn:hover{background:color-mix(in oklab,#ef4444 11%,var(--bg-3))}
@@ -1187,7 +1187,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .sw-section-hdr::after{content:'';flex:1;height:1px;background:var(--border)}
 .sw-empty{padding:20px 16px;text-align:center;color:var(--text-3);font-size:13px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);line-height:1.55}
 .sw-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:13px 15px;margin-bottom:8px;cursor:pointer;transition:all 140ms ease;display:flex;align-items:center;gap:12px}
-.sw-card:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.08);border-color:color-mix(in oklab,var(--accent) 40%,var(--border))}
+.sw-card:hover{background:var(--bg-3);border-color:color-mix(in oklab,var(--accent) 40%,var(--border))}
 .sw-card-ico{width:42px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;font-size:11px;letter-spacing:.04em;border:1px solid transparent}
 .sw-card-ico.pull{background:color-mix(in oklab,var(--accent) 13%,var(--bg-2));color:var(--accent);border-color:color-mix(in oklab,var(--accent) 28%,var(--border))}
 .sw-card-ico.push{background:color-mix(in oklab,var(--warning) 13%,var(--bg-2));color:var(--warning);border-color:color-mix(in oklab,var(--warning) 28%,var(--border))}
@@ -1645,16 +1645,15 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   justify-content: space-between !important;
 }
 #pg-home .kpi-row .kpi-card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+  background: var(--bg-3) !important;
 }
 
 /* Reset labels back to clear hierarchy */
 #pg-home .kpi-lbl {
   font-size: 10px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .07em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 8px !important;
 }
@@ -1674,20 +1673,18 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── CARD 1: Monthly km — featured hero card ───────────────────── */
 #pg-home .kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 9%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, var(--accent) 9%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, var(--accent) 18%, var(--border)) !important;
   padding: 18px 20px !important;
 }
 #pg-home .kpi-row .kpi-card:nth-child(1) .kpi-lbl {
   color: color-mix(in oklab, var(--accent) 80%, var(--text-3)) !important;
-  letter-spacing: .07em !important;
+  letter-spacing: 0 !important;
   font-size: 10px !important;
 }
 #pg-home .kpi-row .kpi-card:nth-child(1) .kpi-val {
   font-size: 34px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: var(--accent) !important;
   letter-spacing: -.03em !important;
 }
@@ -1699,22 +1696,22 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 /* ── CARD 5: Run Streak — solid accent card ────────────────────── */
 #pg-home .kpi-row .kpi-card:nth-child(5) {
   background: var(--accent) !important;
-  background: linear-gradient(145deg, var(--accent) 0%, color-mix(in oklab, var(--accent) 85%, #000) 100%) !important;
+  background: var(--accent) !important;
   border-color: var(--accent) !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.25) !important;
+  box-shadow: none !important;
 }
 #pg-home .kpi-row .kpi-card:nth-child(5):hover {
-  box-shadow: 0 6px 20px rgba(232,71,10,0.35) !important;
+  box-shadow: none !important;
 }
 #pg-home .kpi-row .kpi-card:nth-child(5) .kpi-lbl {
   color: rgba(255,255,255,0.65) !important;
-  text-transform: uppercase !important;
-  letter-spacing: .07em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   font-size: 10px !important;
 }
 #pg-home .kpi-row .kpi-card:nth-child(5) .kpi-val {
   font-size: 32px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #fff !important;
   letter-spacing: -.03em !important;
 }
@@ -1725,9 +1722,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* Dark mode: adjust card 1 gradient */
 [data-theme="dark"] #pg-home .kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 14%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, var(--accent) 14%, var(--bg-2)) !important;
 }
 
 /* ── MARATHON READINESS: PREMIUM CARD ──────────────────────────── */
@@ -1763,7 +1758,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 /* Readiness % number — make it a big statement */
 #pg-home .prog-hdr .num {
   font-size: 42px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: -.04em !important;
   line-height: 1 !important;
   color: var(--accent) !important;
@@ -1780,9 +1775,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* CTL Fitness bar — warm orange gradient with end marker */
 #pg-home #rd-bar {
-  background: linear-gradient(90deg,
-    rgba(232,71,10,0.35) 0%,
-    var(--accent) 100%) !important;
+  background: var(--accent) !important;
   height: 100% !important;
   border-radius: 99px !important;
   position: relative !important;
@@ -1806,9 +1799,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* km Volume bar — green gradient with end marker */
 #pg-home #km-bar {
-  background: linear-gradient(90deg,
-    rgba(61,153,112,0.35) 0%,
-    var(--success) 100%) !important;
+  background: var(--success) !important;
   position: relative !important;
   border-radius: 99px !important;
   height: 100% !important;
@@ -1924,16 +1915,15 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   justify-content: space-between !important;
 }
 #pg-home .cal-kpi-row .kpi-card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+  background: var(--bg-3) !important;
 }
 
 /* Shared label/value resets for cal cards */
 #pg-home .cal-kpi-row .kpi-lbl {
   font-size: 10px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .07em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 8px !important;
 }
@@ -1952,9 +1942,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── CARD 1: Pull-ups — purple featured card ────────────────────── */
 #pg-home .cal-kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, #8b5cf6 9%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, #8b5cf6 9%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, #8b5cf6 18%, var(--border)) !important;
   padding: 18px 20px !important;
 }
@@ -1963,7 +1951,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 }
 #pg-home .cal-kpi-row .kpi-card:nth-child(1) .kpi-val {
   font-size: 34px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #8b5cf6 !important;
   letter-spacing: -.03em !important;
 }
@@ -1972,9 +1960,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   font-size: 11px !important;
 }
 [data-theme="dark"] #pg-home .cal-kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, #8b5cf6 14%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, #8b5cf6 14%, var(--bg-2)) !important;
 }
 
 /* ── CARD 2: Dips — compact neutral card ────────────────────────── */
@@ -1988,22 +1974,22 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 /* ── CARD 3: Workout Streak — solid orange (matches running streak) */
 #pg-home .cal-kpi-row .kpi-card:nth-child(3) {
   background: var(--accent) !important;
-  background: linear-gradient(145deg, var(--accent) 0%, color-mix(in oklab, var(--accent) 85%, #000) 100%) !important;
+  background: var(--accent) !important;
   border-color: var(--accent) !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.25) !important;
+  box-shadow: none !important;
 }
 #pg-home .cal-kpi-row .kpi-card:nth-child(3):hover {
-  box-shadow: 0 6px 20px rgba(232,71,10,0.35) !important;
+  box-shadow: none !important;
 }
 #pg-home .cal-kpi-row .kpi-card:nth-child(3) .kpi-lbl {
   color: rgba(255,255,255,0.65) !important;
-  text-transform: uppercase !important;
-  letter-spacing: .07em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   font-size: 10px !important;
 }
 #pg-home .cal-kpi-row .kpi-card:nth-child(3) .kpi-val {
   font-size: 32px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #fff !important;
   letter-spacing: -.03em !important;
 }
@@ -2037,8 +2023,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   min-height: 90px !important;
 }
 #pg-home .cal-check-card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.07) !important;
+  background: var(--bg-3) !important;
   border-color: color-mix(in oklab, var(--text-3) 40%, var(--border)) !important;
 }
 
@@ -2053,8 +2038,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-home .cal-check-card .cc-lbl {
   font-size: 10px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-2) !important;
 }
 
@@ -2070,13 +2055,13 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* Pull & Push done → solid orange */
 #pg-home .cal-check-row .cal-check-card:nth-child(1).done {
-  background: linear-gradient(145deg, var(--accent) 0%, color-mix(in oklab, var(--accent) 82%, #000) 100%) !important;
+  background: var(--accent) !important;
   border: none !important;
   border-top: none !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.30) !important;
+  box-shadow: none !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(1).done:hover {
-  box-shadow: 0 6px 20px rgba(232,71,10,0.40) !important;
+  box-shadow: none !important;
   border: none !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(1).done .cc-icon,
@@ -2086,13 +2071,13 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* Prehab done → solid green */
 #pg-home .cal-check-row .cal-check-card:nth-child(2).done {
-  background: linear-gradient(145deg, var(--success) 0%, color-mix(in oklab, var(--success) 82%, #000) 100%) !important;
+  background: var(--success) !important;
   border: none !important;
   border-top: none !important;
-  box-shadow: 0 4px 16px rgba(61,153,112,0.30) !important;
+  box-shadow: none !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(2).done:hover {
-  box-shadow: 0 6px 20px rgba(61,153,112,0.40) !important;
+  box-shadow: none !important;
   border: none !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(2).done .cc-icon,
@@ -2102,13 +2087,13 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── PARTIAL: prehab incomplete ─────────────────────────────────── */
 #pg-home .cal-check-row .cal-check-card:nth-child(2).partial {
-  background: linear-gradient(145deg, var(--warning) 0%, color-mix(in oklab, var(--warning) 82%, #000) 100%) !important;
+  background: var(--warning) !important;
   border: none !important;
   border-top: none !important;
-  box-shadow: 0 4px 16px rgba(240,165,0,0.30) !important;
+  box-shadow: none !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(2).partial:hover {
-  box-shadow: 0 6px 20px rgba(240,165,0,0.40) !important;
+  box-shadow: none !important;
   border: none !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(2).partial .cc-icon,
@@ -2136,9 +2121,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── KPI CARD 1: Pull-ups → ORANGE (pull = accent) ─────────── */
 #pg-home .cal-kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 9%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, var(--accent) 9%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, var(--accent) 18%, var(--border)) !important;
 }
 #pg-home .cal-kpi-row .kpi-card:nth-child(1) .kpi-lbl {
@@ -2151,16 +2134,12 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: color-mix(in oklab, var(--accent) 50%, var(--text-3)) !important;
 }
 [data-theme="dark"] #pg-home .cal-kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 14%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, var(--accent) 14%, var(--bg-2)) !important;
 }
 
 /* ── KPI CARD 2: Dips → PURPLE (accent secondary) */
 #pg-home .cal-kpi-row .kpi-card:nth-child(2) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, #8b5cf6 8%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, #8b5cf6 8%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, #8b5cf6 16%, var(--border)) !important;
   padding: 14px 18px !important;
 }
@@ -2175,9 +2154,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: color-mix(in oklab, #8b5cf6 45%, var(--text-3)) !important;
 }
 [data-theme="dark"] #pg-home .cal-kpi-row .kpi-card:nth-child(2) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, #8b5cf6 12%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, #8b5cf6 12%, var(--bg-2)) !important;
 }
 
 /* ── END COLOUR CORRECTION ─────────────────────────────────────── */
@@ -2251,16 +2228,15 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   transition: transform 160ms ease, box-shadow 160ms ease !important;
 }
 #pg-home .rd-kpi-row .kpi-card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+  background: var(--bg-3) !important;
 }
 
 /* Shared label/value styles for rd cards */
 #pg-home .rd-kpi-row .kpi-lbl {
   font-size: 10px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .07em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 8px !important;
 }
@@ -2279,9 +2255,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── CARD 1: Pages Read — orange featured (reading = orange) ─────── */
 #pg-home .rd-kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 9%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, var(--accent) 9%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, var(--accent) 18%, var(--border)) !important;
   padding: 18px 20px !important;
 }
@@ -2290,7 +2264,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 }
 #pg-home .rd-kpi-row .kpi-card:nth-child(1) .kpi-val {
   font-size: 34px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: -.03em !important;
   color: var(--accent) !important;
 }
@@ -2299,16 +2273,12 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: color-mix(in oklab, var(--accent) 50%, var(--text-3)) !important;
 }
 [data-theme="dark"] #pg-home .rd-kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 14%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, var(--accent) 14%, var(--bg-2)) !important;
 }
 
 /* ── CARD 2: Edit Time — green compact (editing = green) ─────────── */
 #pg-home .rd-kpi-row .kpi-card:nth-child(2) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--success) 7%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, var(--success) 7%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, var(--success) 15%, var(--border)) !important;
   padding: 14px 18px !important;
 }
@@ -2326,13 +2296,13 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── CARD 3: Words Written — solid purple tall (writing = purple) ── */
 #pg-home .rd-kpi-row .kpi-card:nth-child(3) {
-  background: linear-gradient(145deg, #8b5cf6 0%, #7c3aed 100%) !important;
+  background: #8b5cf6 !important;
   border-color: #8b5cf6 !important;
-  box-shadow: 0 4px 16px rgba(139,92,246,0.25) !important;
+  box-shadow: none !important;
   padding: 18px 20px !important;
 }
 #pg-home .rd-kpi-row .kpi-card:nth-child(3):hover {
-  box-shadow: 0 6px 20px rgba(139,92,246,0.35) !important;
+  box-shadow: none !important;
 }
 /* Reset the rd-k-* inner layout classes for the words card */
 #pg-home .rd-kpi-row .kpi-card:nth-child(3) .rd-k-lbl-w {
@@ -2341,8 +2311,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   align-self: unset !important;
   font-size: 10px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .07em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: rgba(255,255,255,0.65) !important;
   margin-bottom: 8px !important;
   display: block !important;
@@ -2351,7 +2321,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   grid-column: unset !important;
   grid-row: unset !important;
   font-size: 32px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: -.03em !important;
   color: #fff !important;
   text-align: left !important;
@@ -2399,7 +2369,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 }
 #pg-home .rd-prog-vals .num {
   font-size: 18px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: -.02em !important;
   color: var(--text) !important;
   display: block !important;
@@ -2420,8 +2390,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* Reading bar (1st prog-wrap) — orange gradient + bead */
 #pg-home div[style*="margin-bottom:16px"] > .rd-prog-wrap:nth-child(1) .rd-bar-fill {
-  background: linear-gradient(90deg,
-    rgba(232,71,10,0.35) 0%, var(--accent) 100%) !important;
+  background: var(--accent) !important;
   height: 100% !important;
   border-radius: 99px !important;
   position: relative !important;
@@ -2444,8 +2413,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* Writing bar (2nd prog-wrap) — purple gradient + bead */
 #pg-home div[style*="margin-bottom:16px"] > .rd-prog-wrap:nth-child(2) .rd-bar-fill {
-  background: linear-gradient(90deg,
-    rgba(139,92,246,0.35) 0%, #8b5cf6 100%) !important;
+  background: #8b5cf6 !important;
   height: 100% !important;
   border-radius: 99px !important;
   position: relative !important;
@@ -2553,8 +2521,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-log #run-form .fl {
   font-size: 11px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .06em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 8px !important;
   display: flex !important;
@@ -2685,11 +2653,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: var(--accent) !important;
 }
 #pg-log #run-form .run-type-btn.active {
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 82%, #000) 100%) !important;
+  background: var(--accent) !important;
   border-color: transparent !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(232,71,10,0.28) !important;
+  box-shadow: none !important;
 }
 
 /* ── RPE SLIDER — PREMIUM GRADIENT TRACK ────────────────────────── */
@@ -2758,8 +2725,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 /* ── SUBMIT BUTTON — PREMIUM ORANGE GRADIENT CTA ─────────────────── */
 #pg-log #run-form .btn-primary.btn-full {
   width: 100% !important;
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 78%, #000) 100%) !important;
+  background: var(--accent) !important;
   color: #fff !important;
   border: none !important;
   border-radius: 12px !important;
@@ -2769,18 +2735,11 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   letter-spacing: .01em !important;
   min-height: 50px !important;
   cursor: pointer !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.28) !important;
+  box-shadow: none !important;
   transition: all 160ms ease !important;
   margin-top: 24px !important;
 }
-#pg-log #run-form .btn-primary.btn-full:hover {
-  box-shadow: 0 6px 22px rgba(232,71,10,0.38) !important;
-  transform: translateY(-1px) !important;
-}
-#pg-log #run-form .btn-primary.btn-full:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 2px 8px rgba(232,71,10,0.22) !important;
-}
+
 
 /* ── PACE ZONE TABLE: inside the form card ───────────────────────── */
 #pg-log #run-form #pace-zone-table {
@@ -2825,8 +2784,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-log #cal-form .fl {
   font-size: 11px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .06em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 8px !important;
 }
@@ -2906,11 +2865,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: var(--accent) !important;
 }
 #pg-log #cal-form .cal-type-btn.active[data-type="Pull & Push"] {
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 82%, #000) 100%) !important;
+  background: var(--accent) !important;
   border-color: transparent !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(232,71,10,0.28) !important;
+  box-shadow: none !important;
 }
 
 /* Prehab hover / active — green */
@@ -2919,11 +2877,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: var(--success) !important;
 }
 #pg-log #cal-form .cal-type-btn.active[data-type="Prehab"] {
-  background: linear-gradient(145deg, var(--success) 0%,
-    color-mix(in oklab, var(--success) 80%, #000) 100%) !important;
+  background: var(--success) !important;
   border-color: transparent !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(61,153,112,0.28) !important;
+  box-shadow: none !important;
 }
 
 /* ── EXERCISE ROW INPUTS (inline-styled, need higher specificity) ── */
@@ -3001,7 +2958,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-log #cal-form .ph-block-hdr {
   padding: 10px 0 8px !important;
   font-size: 10px !important;
-  letter-spacing: .07em !important;
+  letter-spacing: 0 !important;
   border-bottom: 1px solid var(--border) !important;
   margin-bottom: 0 !important;
 }
@@ -3054,8 +3011,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── SAVE SESSION BUTTON — orange gradient CTA ───────────────────── */
 #pg-log #cal-form .btn-primary.btn-full {
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 78%, #000) 100%) !important;
+  background: var(--accent) !important;
   color: #fff !important;
   border: none !important;
   border-radius: 12px !important;
@@ -3065,19 +3021,12 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   letter-spacing: .01em !important;
   min-height: 50px !important;
   width: 100% !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.28) !important;
+  box-shadow: none !important;
   transition: all 160ms ease !important;
   margin-top: 24px !important;
   cursor: pointer !important;
 }
-#pg-log #cal-form .btn-primary.btn-full:hover {
-  box-shadow: 0 6px 22px rgba(232,71,10,0.38) !important;
-  transform: translateY(-1px) !important;
-}
-#pg-log #cal-form .btn-primary.btn-full:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 2px 8px rgba(232,71,10,0.22) !important;
-}
+
 
 /* ── SAVE AS TEMPLATE BUTTON ─────────────────────────────────────── */
 #pg-log #cal-form .btn-secondary.btn-full {
@@ -3110,10 +3059,9 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #sw-list-section .sw-card {
   border-radius: 14px !important;
   padding: 14px 16px !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03) !important;
 }
 #sw-list-section .sw-card:hover {
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
+  background: var(--bg-3) !important;
 }
 
 /* ── END CALISTHENICS LOG REDESIGN ───────────────────────────────── */
@@ -3141,8 +3089,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-log #rd-form .fl {
   font-size: 11px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .06em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 8px !important;
 }
@@ -3211,11 +3159,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: var(--accent) !important;
 }
 #pg-log #rd-form .rd-type-btn.active[data-type="reading"] {
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 82%, #000) 100%) !important;
+  background: var(--accent) !important;
   border-color: transparent !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(232,71,10,0.28) !important;
+  box-shadow: none !important;
 }
 
 /* Writing → purple (matches home: writing = #8b5cf6) */
@@ -3224,10 +3171,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: #8b5cf6 !important;
 }
 #pg-log #rd-form .rd-type-btn.active[data-type="writing"] {
-  background: linear-gradient(145deg, #8b5cf6 0%, #7c3aed 100%) !important;
+  background: #8b5cf6 !important;
   border-color: transparent !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(139,92,246,0.28) !important;
+  box-shadow: none !important;
 }
 
 /* Editing → green (matches home: editing = success) */
@@ -3236,11 +3183,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: var(--success) !important;
 }
 #pg-log #rd-form .rd-type-btn.active[data-type="editing"] {
-  background: linear-gradient(145deg, var(--success) 0%,
-    color-mix(in oklab, var(--success) 80%, #000) 100%) !important;
+  background: var(--success) !important;
   border-color: transparent !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(61,153,112,0.28) !important;
+  box-shadow: none !important;
 }
 
 /* Focus ring colour adapts to active type — default orange */
@@ -3268,8 +3214,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
    We use a single orange gradient as the universal CTA.
    The accent has been established as the brand colour throughout. */
 #pg-log #rd-form .btn-primary.btn-full {
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 78%, #000) 100%) !important;
+  background: var(--accent) !important;
   color: #fff !important;
   border: none !important;
   border-radius: 12px !important;
@@ -3279,19 +3224,12 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   letter-spacing: .01em !important;
   min-height: 50px !important;
   width: 100% !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.28) !important;
+  box-shadow: none !important;
   transition: all 160ms ease !important;
   margin-top: 24px !important;
   cursor: pointer !important;
 }
-#pg-log #rd-form .btn-primary.btn-full:hover {
-  box-shadow: 0 6px 22px rgba(232,71,10,0.38) !important;
-  transform: translateY(-1px) !important;
-}
-#pg-log #rd-form .btn-primary.btn-full:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 2px 8px rgba(232,71,10,0.22) !important;
-}
+
 
 /* ── END READING & WRITING LOG REDESIGN ─────────────────────────── */
 
@@ -3307,9 +3245,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── HOME KPI CARD 1: Pages Read → PURPLE ───────────────────────── */
 #pg-home .rd-kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, #8b5cf6 9%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, #8b5cf6 9%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, #8b5cf6 18%, var(--border)) !important;
 }
 #pg-home .rd-kpi-row .kpi-card:nth-child(1) .kpi-lbl {
@@ -3322,19 +3258,17 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: color-mix(in oklab, #8b5cf6 50%, var(--text-3)) !important;
 }
 [data-theme="dark"] #pg-home .rd-kpi-row .kpi-card:nth-child(1) {
-  background: linear-gradient(135deg,
-    color-mix(in oklab, #8b5cf6 14%, var(--bg-2)) 0%,
-    var(--bg-2) 70%) !important;
+  background: color-mix(in oklab, #8b5cf6 14%, var(--bg-2)) !important;
 }
 
 /* ── HOME KPI CARD 3: Words Written → SOLID BLUE ────────────────── */
 #pg-home .rd-kpi-row .kpi-card:nth-child(3) {
-  background: linear-gradient(145deg, #3b82f6 0%, #2563eb 100%) !important;
+  background: #3b82f6 !important;
   border-color: #3b82f6 !important;
-  box-shadow: 0 4px 16px rgba(59,130,246,0.25) !important;
+  box-shadow: none !important;
 }
 #pg-home .rd-kpi-row .kpi-card:nth-child(3):hover {
-  box-shadow: 0 6px 20px rgba(59,130,246,0.35) !important;
+  box-shadow: none !important;
 }
 #pg-home .rd-kpi-row .kpi-card:nth-child(3) .rd-k-lbl-w {
   color: rgba(255,255,255,0.65) !important;
@@ -3348,8 +3282,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── MONTHLY GOALS: Reading bar → purple ─────────────────────────── */
 #pg-home div[style*="margin-bottom:16px"] > .rd-prog-wrap:nth-child(1) .rd-bar-fill {
-  background: linear-gradient(90deg,
-    rgba(139,92,246,0.35) 0%, #8b5cf6 100%) !important;
+  background: #8b5cf6 !important;
 }
 #pg-home div[style*="margin-bottom:16px"] > .rd-prog-wrap:nth-child(1) .rd-bar-fill::after {
   border-color: #8b5cf6 !important;
@@ -3363,8 +3296,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── MONTHLY GOALS: Writing bar → blue ──────────────────────────── */
 #pg-home div[style*="margin-bottom:16px"] > .rd-prog-wrap:nth-child(2) .rd-bar-fill {
-  background: linear-gradient(90deg,
-    rgba(59,130,246,0.35) 0%, #3b82f6 100%) !important;
+  background: #3b82f6 !important;
 }
 #pg-home div[style*="margin-bottom:16px"] > .rd-prog-wrap:nth-child(2) .rd-bar-fill::after {
   border-color: #3b82f6 !important;
@@ -3399,10 +3331,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: #8b5cf6 !important;
 }
 #pg-log #rd-form .rd-type-btn.active[data-type="reading"] {
-  background: linear-gradient(145deg, #8b5cf6 0%, #7c3aed 100%) !important;
+  background: #8b5cf6 !important;
   border-color: transparent !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(139,92,246,0.28) !important;
+  box-shadow: none !important;
 }
 
 /* Writing pill */
@@ -3411,10 +3343,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: #3b82f6 !important;
 }
 #pg-log #rd-form .rd-type-btn.active[data-type="writing"] {
-  background: linear-gradient(145deg, #3b82f6 0%, #2563eb 100%) !important;
+  background: #3b82f6 !important;
   border-color: transparent !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(59,130,246,0.28) !important;
+  box-shadow: none !important;
 }
 
 /* Focus ring: use purple for reading context by default */
@@ -3439,31 +3371,18 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── 1. PHASE BANNER ─────────────────────────────────────────────── */
 #pg-plan .phase-banner {
-  background: linear-gradient(145deg,
-    var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 75%, #000) 100%) !important;
+  background: var(--accent) !important;
   border-radius: 18px !important;
   padding: 20px 22px !important;
   margin-bottom: 16px !important;
-  box-shadow:
-    0 4px 20px rgba(232,71,10,0.26),
-    0 1px 2px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
   align-items: flex-start !important;
   position: relative !important;
   overflow: hidden !important;
 }
-/* Subtle texture highlight */
-#pg-plan .phase-banner::before {
-  content: '' !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: linear-gradient(140deg, rgba(255,255,255,0.1) 0%, transparent 55%) !important;
-  pointer-events: none !important;
-  border-radius: inherit !important;
-}
 #pg-plan .phase-banner .ph-name {
   font-size: 22px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: -0.02em !important;
   line-height: 1.15 !important;
   color: #fff !important;
@@ -3519,9 +3438,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-plan .arc-week-card:has(.arc-today) {
   border-color: color-mix(in oklab, var(--accent) 38%, var(--border)) !important;
   background: color-mix(in oklab, var(--accent) 2.5%, var(--bg-2)) !important;
-  box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--accent) 18%, transparent),
-    0 2px 10px rgba(232,71,10,0.08) !important;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 18%, transparent) !important;
 }
 #pg-plan .arc-calendar-list {
   gap: 14px !important;
@@ -3596,8 +3513,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-plan .arc-day-name {
   font-size: 9px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .09em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
 }
 #pg-plan .arc-day-date {
@@ -3712,10 +3629,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 /* Header label row inside each exercise card */
 #pg-log #cal-form #cal-ex-list > [id^="cal-ex-"] > div:first-child {
   font-size: 9px !important;
-  letter-spacing: .08em !important;
+  letter-spacing: 0 !important;
   font-weight: 700 !important;
   color: var(--text-3) !important;
-  text-transform: uppercase !important;
+  text-transform: none !important;
   margin-bottom: 6px !important;
   padding-bottom: 6px !important;
   border-bottom: 1px solid var(--border) !important;
@@ -3780,8 +3697,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #sw-list-section .sw-section-hdr {
   font-size: 10px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 12px !important;
 }
@@ -3790,12 +3707,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   border-radius: 14px !important;
   padding: 14px 16px !important;
   border: 1px solid var(--border) !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03) !important;
   margin-bottom: 10px !important;
 }
 #sw-list-section .sw-card:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.09) !important;
+  background: var(--bg-3) !important;
   border-color: color-mix(in oklab, var(--accent) 30%, var(--border)) !important;
 }
 /* Card icon badge: larger, more rounded */
@@ -3804,8 +3719,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   height: 40px !important;
   border-radius: 10px !important;
   font-size: 11px !important;
-  font-weight: 800 !important;
-  letter-spacing: .04em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
 }
 #sw-list-section .sw-card-ico.pull {
   background: color-mix(in oklab, var(--accent) 14%, var(--bg)) !important;
@@ -3889,21 +3804,20 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   border-radius: 99px !important;
   font-size: 12px !important;
   font-weight: 700 !important;
-  letter-spacing: .05em !important;
-  text-transform: uppercase !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
   margin-bottom: 20px !important;
   border: none !important;
 }
 .sw-type-badge.pull {
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 78%, #000) 100%) !important;
+  background: var(--accent) !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(232,71,10,0.25) !important;
+  box-shadow: none !important;
 }
 .sw-type-badge.push {
-  background: linear-gradient(145deg, #8b5cf6 0%, #7c3aed 100%) !important;
+  background: #8b5cf6 !important;
   color: #fff !important;
-  box-shadow: 0 3px 10px rgba(139,92,246,0.25) !important;
+  box-shadow: none !important;
 }
 .sw-type-badge.other {
   background: var(--bg-2) !important;
@@ -3980,8 +3894,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .sw-ov-body .sec-ttl {
   font-size: 10px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
 }
 
@@ -3989,8 +3903,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .sw-ov-body .fl {
   font-size: 11px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .06em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 8px !important;
 }
@@ -4065,8 +3979,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 /* ── Complete & Log button — colour-coded by workout type ────────── */
 /* Default (other): green gradient */
 .sw-complete-btn {
-  background: linear-gradient(145deg, var(--success) 0%,
-    color-mix(in oklab, var(--success) 78%, #000) 100%) !important;
+  background: var(--success) !important;
   color: #fff !important;
   border: none !important;
   border-radius: 14px !important;
@@ -4074,32 +3987,30 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   font-size: 15px !important;
   font-weight: 700 !important;
   letter-spacing: .01em !important;
-  box-shadow: 0 4px 16px rgba(61,153,112,0.28) !important;
+  box-shadow: none !important;
   transition: all 160ms ease !important;
   gap: 9px !important;
   margin-bottom: 12px !important;
 }
 .sw-complete-btn:hover {
-  box-shadow: 0 6px 22px rgba(61,153,112,0.38) !important;
-  transform: translateY(-1px) !important;
-  filter: none !important;
+  box-shadow: none !important;
+  filter: brightness(1.08) !important;
 }
 /* Pull workout → orange CTA (detected via sibling .sw-type-badge.pull) */
 .sw-ov-body:has(.sw-type-badge.pull) .sw-complete-btn {
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 78%, #000) 100%) !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.28) !important;
+  background: var(--accent) !important;
+  box-shadow: none !important;
 }
 .sw-ov-body:has(.sw-type-badge.pull) .sw-complete-btn:hover {
-  box-shadow: 0 6px 22px rgba(232,71,10,0.38) !important;
+  box-shadow: none !important;
 }
 /* Push workout → purple CTA */
 .sw-ov-body:has(.sw-type-badge.push) .sw-complete-btn {
-  background: linear-gradient(145deg, #8b5cf6 0%, #7c3aed 100%) !important;
-  box-shadow: 0 4px 16px rgba(139,92,246,0.28) !important;
+  background: #8b5cf6 !important;
+  box-shadow: none !important;
 }
 .sw-ov-body:has(.sw-type-badge.push) .sw-complete-btn:hover {
-  box-shadow: 0 6px 22px rgba(139,92,246,0.38) !important;
+  box-shadow: none !important;
 }
 
 /* ── Delete Template button ─────────────────────────────────────── */
@@ -4265,8 +4176,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-log #cal-form #cal-prehab-section .fl {
   font-size: 11px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .06em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 0 !important;
 }
@@ -4300,8 +4211,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-log #cal-form .ph-block-hdr {
   font-size: 10px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   padding: 9px 14px !important;
   margin-bottom: 0 !important;
   border-bottom: 1px solid var(--border) !important;
@@ -4516,7 +4427,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   margin-bottom: 0 !important;
   font-size: 14px !important;
   font-weight: 700 !important;
-  letter-spacing: .04em !important;
+  letter-spacing: 0 !important;
   color: var(--accent) !important;
 }
 .kpi-streak-row .kpi-val {
@@ -4588,10 +4499,9 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   padding: 16px 20px !important;
   margin-bottom: 0 !important;
   border-radius: 14px !important;
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 80%, #000) 100%) !important;
+  background: var(--accent) !important;
   border: none !important;
-  box-shadow: 0 3px 12px rgba(232,71,10,0.22) !important;
+  box-shadow: none !important;
 }
 .kpi-streak-row .kpi-lbl {
   grid-column: 1 !important;
@@ -4600,15 +4510,15 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   margin-bottom: 0 !important;
   font-size: 14px !important;
   font-weight: 700 !important;
-  letter-spacing: .04em !important;
-  text-transform: uppercase !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
   color: rgba(255,255,255,0.75) !important;
 }
 .kpi-streak-row .kpi-val {
   grid-column: 2 !important;
   grid-row: 1 !important;
   font-size: 32px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   line-height: 1 !important;
   color: #fff !important;
   margin-bottom: 0 !important;
@@ -4678,9 +4588,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   min-height: 80px !important;
   padding: 18px 20px !important;
   border-radius: 14px !important;
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 13%, var(--bg-2)) 0%,
-    var(--bg-2) 65%) !important;
+  background: color-mix(in oklab, var(--accent) 13%, var(--bg-2)) !important;
   border: 1px solid color-mix(in oklab, var(--accent) 24%, var(--border)) !important;
   box-shadow: none !important;
   margin-bottom: 0 !important;
@@ -4693,15 +4601,15 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   margin-bottom: 0 !important;
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .07em !important;
-  text-transform: uppercase !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
   color: color-mix(in oklab, var(--accent) 80%, var(--text-3)) !important;
 }
 #pg-home .kpi-streak-row .kpi-val {
   grid-column: 2 !important;
   grid-row: 1 !important;
   font-size: 34px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   line-height: 1 !important;
   color: var(--accent) !important;
   margin-bottom: 0 !important;
@@ -4733,9 +4641,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 }
 .pf-card-finance {
   grid-column: 1 / -1 !important;
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--success) 10%, var(--bg-2)) 0%,
-    var(--bg-2) 65%) !important;
+  background: color-mix(in oklab, var(--success) 10%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, var(--success) 24%, var(--border)) !important;
 }
 .pf-card-finance .pf-card-title {
@@ -4754,9 +4660,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--success) 13%, var(--bg-2)) 0%,
-    var(--bg-2) 65%) !important;
+  background: color-mix(in oklab, var(--success) 13%, var(--bg-2)) !important;
   border: 1px solid color-mix(in oklab, var(--success) 24%, var(--border)) !important;
   border-radius: 14px !important;
   padding: 18px 20px !important;
@@ -4765,14 +4669,14 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .pf-wealth-lbl {
   font-size: 10px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .07em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: color-mix(in oklab, var(--success) 75%, var(--text-3)) !important;
   margin-bottom: 6px !important;
 }
 .pf-wealth-val {
   font-size: 34px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   line-height: 1 !important;
   letter-spacing: -.03em !important;
   color: var(--success) !important;
@@ -4801,14 +4705,14 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .pf-kpi-lbl {
   font-size: 10px !important;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .07em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
   margin-bottom: 6px !important;
 }
 .pf-kpi-val {
   font-size: 22px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: -.02em !important;
   color: var(--text) !important;
   font-variant-numeric: tabular-nums !important;
@@ -4834,9 +4738,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   column-gap: 14px !important;
   min-height: 76px !important;
   padding: 16px 20px !important;
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--success) 10%, var(--bg-2)) 0%,
-    var(--bg-2) 65%) !important;
+  background: color-mix(in oklab, var(--success) 10%, var(--bg-2)) !important;
   border-color: color-mix(in oklab, var(--success) 24%, var(--border)) !important;
 }
 .pf-kpi.pf-kpi-wide .pf-kpi-lbl {
@@ -4850,7 +4752,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   grid-column: 2 !important;
   grid-row: 1 !important;
   font-size: 34px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: -.03em !important;
   text-align: right !important;
   margin-bottom: 0 !important;
@@ -4970,8 +4872,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   font-size: 11px !important;
   font-weight: 700 !important;
   color: var(--text-3) !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   padding: 18px 0 8px !important;
 }
 
@@ -5019,8 +4921,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   font-size: 11px !important;
   font-weight: 700 !important;
   color: var(--text-3) !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;   /* was .8px, now matches sec-ttl */
+  text-transform: none !important;
+  letter-spacing: 0 !important;   /* was .8px, now matches sec-ttl */
   padding: 20px 0 10px !important;
 }
 
@@ -5080,7 +4982,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .man-table th {
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .06em !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
 }
 .man-table td {
@@ -5124,9 +5026,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   margin: 18px 18px 0 !important;
   padding: 18px 20px !important;
   border-radius: 14px !important;
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--success) 13%, var(--bg-2)) 0%,
-    var(--bg-2) 65%) !important;
+  background: color-mix(in oklab, var(--success) 13%, var(--bg-2)) !important;
   border: 1px solid color-mix(in oklab, var(--success) 26%, var(--border)) !important;
   border-bottom: 1px solid color-mix(in oklab, var(--success) 26%, var(--border)) !important;
   backdrop-filter: none !important;
@@ -5138,7 +5038,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .jnl-title {
   font-family: var(--font-display) !important;
   font-size: 22px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: var(--success) !important;
   letter-spacing: -.02em !important;
   flex: 1 !important;
@@ -5189,8 +5089,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   font-size: 11px !important;
   font-weight: 600 !important;
   color: var(--text-3) !important;
-  text-transform: uppercase !important;
-  letter-spacing: .06em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
 }
 
 /* Body padding matches PF inner padding ────────────────────────── */
@@ -5203,8 +5103,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   font-size: 11px !important;
   font-weight: 700 !important;
   color: var(--text-3) !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   padding: 18px 0 8px !important;
   display: flex !important;
   align-items: center !important;
@@ -5282,9 +5182,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   margin: 18px 18px 0 !important;
   padding: 18px 20px !important;
   border-radius: 14px !important;
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 13%, var(--bg-2)) 0%,
-    var(--bg-2) 65%) !important;
+  background: color-mix(in oklab, var(--accent) 13%, var(--bg-2)) !important;
   border: 1px solid color-mix(in oklab, var(--accent) 26%, var(--border)) !important;
   border-bottom: 1px solid color-mix(in oklab, var(--accent) 26%, var(--border)) !important;
   backdrop-filter: none !important;
@@ -5296,7 +5194,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .man-header-ttl {
   font-family: var(--font-display) !important;
   font-size: 22px !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: var(--accent) !important;
   letter-spacing: -.02em !important;
   line-height: 1.1 !important;
@@ -5306,8 +5204,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .man-header-sub {
   font-size: 11px !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .06em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   color: color-mix(in oklab, var(--accent) 70%, var(--text-3)) !important;
   margin-top: 4px !important;
 }
@@ -5360,8 +5258,8 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   font-size: 11px !important;
   font-weight: 700 !important;
   color: var(--text-3) !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   padding: 20px 0 10px !important;
   display: flex !important;
   align-items: center !important;
@@ -5465,9 +5363,9 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .man-table th {
   font-size: 10px !important;
   font-weight: 700 !important;
-  letter-spacing: .06em !important;
+  letter-spacing: 0 !important;
   color: var(--text-3) !important;
-  text-transform: uppercase !important;
+  text-transform: none !important;
   padding: 6px 10px !important;
   border-bottom: 1px solid var(--border) !important;
   text-align: left !important;
@@ -5509,9 +5407,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   display: flex;
   align-items: center;
   gap: 16px;
-  background: linear-gradient(135deg,
-    color-mix(in oklab, var(--accent) 10%, var(--bg-2)) 0%,
-    var(--bg-2) 65%);
+  background: color-mix(in oklab, var(--accent) 10%, var(--bg-2));
   border: 1px solid color-mix(in oklab, var(--accent) 22%, var(--border));
   border-radius: 14px;
   padding: 20px 18px;
@@ -5822,6 +5718,92 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .pf-fi::placeholder{color:var(--text-3)}
 .pf-fl{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text-3);margin-bottom:4px}
 .pf-fg{margin-bottom:10px}
+
+/* ═══════════════════════════════════════════════════════════════════
+   NOTION REFINEMENT LAYER
+   A single cascade-final pass that shifts the app toward Notion's
+   quieter aesthetic WITHOUT changing the colour scheme. Three moves:
+     1. Micro-labels: uppercase + letter-spacing → sentence case, calmer.
+     2. Type weight: 800/700 display weights → 600, size carries hierarchy.
+     3. Cards: heavy filled+bordered boxes → open surfaces with hairlines.
+   Semantic tag chips (priority, workout type) intentionally KEEP their
+   uppercase pill treatment — that's a genuine Notion pattern.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Labels: drop the uppercase + wide tracking everywhere ──────── */
+.kpi-lbl, .cc-lbl, .ac-ex-hdr, .ph-block-hdr, .sec-ttl, .dp-date, .dp-lbl,
+.day-lbl, .fl, .cal-hdr-cell, .adapt-log-date, .chart-ttl, .prof-sec-ttl,
+.act-stat-lbl, .arc-day-name, .pb-head-lbl, .tsk-kpi-widget .tsk-kw-lbl,
+.tsk-sort-label, .tsk-completed-hdr, .tsk-prop-lbl, .tsk-sec-hdr,
+.pf-kpi-lbl, .pf-acc-name, .man-sec-hdr, .jnl-month-hdr, .sw-section-hdr,
+.pf-fl, .pf-table th, .man-table th, .imp-table th,
+.rd-donut-lbl, .arc-day-name, .cal-hdr-cell, .cal-legend-lbl,
+.tm-field label, #tm-inputs .tm-field label {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+/* Slightly larger + darker so sentence-case labels still read as labels
+   rather than shrinking into nothing. */
+.kpi-lbl, .tsk-kpi-widget .tsk-kw-lbl, .act-stat-lbl, .chart-ttl,
+.pf-kpi-lbl, .sw-section-hdr, .man-sec-hdr, .jnl-month-hdr {
+  font-size: 12px !important;
+  color: var(--text-2) !important;
+}
+
+/* ── 2. Type weight: retire the 800 display weights ───────────────── */
+.kpi-val, .tsk-kw-val, .pf-kpi-val, .act-stat-val {
+  font-weight: 600 !important;
+  letter-spacing: -.01em !important;
+}
+
+/* ── 3. Open up the metric cards ──────────────────────────────────── */
+/* Home / calisthenics / reading KPI rows + task KPI widgets: strip the
+   fill and border, let them sit on the page. Keep the featured accent
+   card (nth-child logic elsewhere) subtly tinted but borderless. */
+.kpi-card, .tsk-kpi-widget, .tsk-kpi-widget.today-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 4px 2px !important;
+}
+/* Give the KPI row a single hairline top rule + internal dividers so the
+   numbers read as a clean stat strip instead of floating boxes. */
+.kpi-row, .cal-kpi-row, .rd-kpi-row, .tsk-kpi-row {
+  gap: 0 !important;
+  border-top: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 14px 0 !important;
+}
+.kpi-row .kpi-card + .kpi-card,
+.cal-kpi-row .kpi-card + .kpi-card,
+.rd-kpi-row .kpi-card + .kpi-card,
+.tsk-kpi-row .tsk-kpi-widget + .tsk-kpi-widget {
+  border-left: 1px solid var(--border) !important;
+  padding-left: 14px !important;
+}
+
+/* The featured "hero" cards elsewhere force a tinted background + border
+   via !important; neutralise those so they match the open treatment,
+   keeping only the accent-coloured text they already use. */
+#pg-home .kpi-row .kpi-card:nth-child(1),
+#pg-home .cal-kpi-row .kpi-card:nth-child(1),
+#pg-home .rd-kpi-row .kpi-card:nth-child(1),
+.kpi-row .kpi-card:nth-child(5) {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+#pg-home .kpi-row .kpi-card:nth-child(1) {
+  border-left: 1px solid var(--border) !important;
+}
+
+/* ── 4. Soften remaining heavy container chrome ───────────────────── */
+/* Standardise card corner radius to a calmer 8px and thin any 1.5px+
+   borders that read as boxy. */
+.feed-card, .sw-card, .tsk-notes-card, .tsk-subs-card, .spark-wrap {
+  border-radius: 8px !important;
+}
 </style>
 </head>
 <body>
@@ -5918,6 +5900,9 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 ═══════════════════════════════════════════════════ */
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
+// Single point of control for lucide icon weight — keeps every icon in the
+// app on one consistent stroke, rather than each icon's default varying.
+function _createIcons(){ if(window.lucide) lucide.createIcons({attrs:{'stroke-width':1.75}}); }
 
 const PREHAB_EXERCISES = [
   {name:'Cat-cow + thoracic rotation', sets:2, reps:'10 each'},
@@ -6064,8 +6049,9 @@ const AppState = {
   paceZones: null,
   hrZones: null,
   weeklyLoadTarget: null,
-  ui:{ theme: window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light', onboarded:true, tab:'#home', onboarded:false, homeMode:'running', logMode:'running' },
+  ui:{ theme: window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light', onboarded:true, tab:'#home', onboarded:false, homeMode:'running', logMode:'running', tskView:'lists' },
   tasks: { lists:[{id:'general',name:'General',items:[]}], activeList:0, sort:'manual' },
+  recipes: [],
   journal: [],
   savedWorkouts: []
 };
@@ -6130,6 +6116,7 @@ function _serializeState() {
     adaptFlags: AppState.adaptFlags,
     adaptLog:   AppState.adaptLog ?? [],
     tasks:      AppState.tasks,
+    recipes:    AppState.recipes??[],
     pfDoc:      AppState.pfDoc??{title:'',body:''},
     pfFinance:  AppState.pfFinance??null,
     journal:    AppState.journal??[],
@@ -6138,7 +6125,8 @@ function _serializeState() {
       theme:     AppState.ui.theme,
       onboarded: AppState.ui.onboarded,
       homeMode:  AppState.ui.homeMode,
-      logMode:   AppState.ui.logMode
+      logMode:   AppState.ui.logMode,
+      tskView:   AppState.ui.tskView
     },
     _updatedAt: Date.now()
   };
@@ -6232,10 +6220,12 @@ function _applyLoadedState(saved) {
     AppState.journal    = saved.journal    ?? [];
     AppState.savedWorkouts = saved.savedWorkouts ?? [];
     AppState.tasks      = saved.tasks      ?? { lists:[{id:'general',name:'General',items:[]}], activeList:0, sort:'manual' };
+    AppState.recipes    = saved.recipes    ?? [];
     AppState.ui.theme     = saved.ui?.theme     ?? AppState.ui.theme;
     AppState.ui.onboarded = true; // onboarding permanently bypassed
     AppState.ui.homeMode  = saved.ui?.homeMode  ?? 'running';
     AppState.ui.logMode   = saved.ui?.logMode   ?? 'running';
+    AppState.ui.tskView   = saved.ui?.tskView   ?? 'lists';
     // Recompute derived fields after load
     AppState.activities.forEach(a => {
       if (a.type==='run') a.avg_pace_sec_per_km = a.distance_km ? a.duration_sec/a.distance_km : 0;
@@ -7520,7 +7510,7 @@ function applyTheme() {
   $('#sb-theme-lbl') && ($('#sb-theme-lbl').textContent=lbl);
   // update profile appearance row if visible
   const trl=$('#theme-row-lbl'); if(trl) trl.textContent=dk?'Dark':'Light';
-  lucide.createIcons();
+  _createIcons();
 }
 
 function toggleTheme() {
@@ -7574,7 +7564,7 @@ function navigate(hash){
   if(hash!=='#plan'){
     requestAnimationFrame(()=>{ const p=$('#pages'); if(p) p.scrollTop=0; });
   }
-  lucide.createIcons();
+  _createIcons();
 }
 
 /* ═══════════════════════════════════════════════════
@@ -7584,7 +7574,7 @@ function openSheet(html){
   $('#sh-body').innerHTML=html;
   $('#sheet-ov').classList.add('open');
   document.body.classList.add('sheet-open');
-  lucide.createIcons();
+  _createIcons();
 }
 function maybeCloseSheet(e){if(e.target===$('#sheet-ov'))closeSheet();}
 function closeSheet(){
@@ -7621,7 +7611,7 @@ function actCard(a){
   // ── shared Notion-style property row ──────────────────────────────
   const propRow=(label,value)=>`
     <div style="display:flex;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--border)">
-      <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-3);width:96px;flex-shrink:0">${label}</span>
+      <span style="font-size:11px;font-weight:600;color:var(--text-3);width:96px;flex-shrink:0">${label}</span>
       <span class="num" style="font-size:13px;color:var(--text)">${value}</span>
     </div>`;
 
@@ -7691,7 +7681,7 @@ function actCard(a){
     return `<div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:8px">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
         <div style="width:8px;height:8px;border-radius:50%;background:${accentCol};flex-shrink:0"></div>
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:${accentCol}">${wt}</div>
+        <div style="font-size:11px;font-weight:600;color:${accentCol}">${wt}</div>
         <div style="font-size:11px;color:var(--text-3);margin-left:auto">${fmtDate(a.date)}</div>
       </div>
       ${propRow('Type',wt)}
@@ -7709,7 +7699,7 @@ function actCard(a){
     return `<div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:8px">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
         <div style="width:8px;height:8px;border-radius:50%;background:${_col};flex-shrink:0"></div>
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:${_col}">${_lbl}</div>
+        <div style="font-size:11px;font-weight:600;color:${_col}">${_lbl}</div>
         <div style="font-size:11px;color:var(--text-3);margin-left:auto">${fmtDate(a.date)}</div>
       </div>
       ${propRow('Date',fmtDate(a.date))}
@@ -7735,12 +7725,12 @@ function actCard(a){
   return `<div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:8px">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
       <div style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;flex-shrink:0"></div>
-      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8b5cf6">${a.session_type||'Strength'}</div>
+      <div style="font-size:11px;font-weight:600;color:#8b5cf6">${a.session_type||'Strength'}</div>
       <div style="font-size:11px;color:var(--text-3);margin-left:auto">${fmtDate(a.date)}</div>
     </div>
     ${propRow('Duration',a.duration_min+' min')}
     ${exRows?`<div style="margin-top:12px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);margin-bottom:4px">Exercises</div>
+      <div style="font-size:10px;font-weight:600;color:var(--text-3);margin-bottom:4px">Exercises</div>
       ${exRows}
     </div>`:''}
     ${a.notes?`<div style="font-size:12px;color:var(--text-2);font-style:italic;padding-top:10px">${a.notes}</div>`:''}
@@ -8144,7 +8134,7 @@ function renderHome(el){
       countUp($('#ck-sk'),calStreak);
       const _csk=$('#ck-sk-sub');
       if(_csk) _csk.textContent=calStreak===0?'no streak yet':calStreak===1?'consecutive workout':'consecutive workouts';
-      lucide.createIcons();
+      _createIcons();
     });
     return;
   }
@@ -8262,7 +8252,7 @@ function renderHome(el){
       if(spkAvg8>0){_badgeVal.textContent=spkAvg8.toFixed(1)+' km avg';_badge.style.display='inline-flex';}
       else{_badge.style.display='none';}
     }
-    lucide.createIcons();
+    _createIcons();
   });
 }
 
@@ -8370,7 +8360,7 @@ function showDaySheet(d){
     </div>`;
   }
   if(acts.length){
-    html+=`<div style="font-size:10px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px">Logged</div>`;
+    html+=`<div style="font-size:10px;font-weight:600;color:var(--text-3);margin-bottom:7px">Logged</div>`;
     acts.forEach(a=>html+=actCard(a));
   } else html+=`<div style="font-size:13px;color:var(--text-2)">No activities logged for this day.</div>`;
   openSheet(html);
@@ -8633,7 +8623,7 @@ function renderReadingHome(el,sliderHtml){
   const _trkEl=document.createElement('div');
   _trkEl.innerHTML=_trkHtml;
   el.appendChild(_trkEl);
-  if(window.lucide)lucide.createIcons();}
+  _createIcons();}
 
 function renderReadingLog(container){
   const recentBooks=[...new Map(AppState.activities.filter(a=>a.type==='reading'&&(!a.activity_type||a.activity_type==='reading')&&a.book_name).sort((a,b)=>b.date.localeCompare(a.date)).map(a=>[a.book_name,a.date])).keys()].slice(0,30);
@@ -8661,7 +8651,7 @@ function renderReadingLog(container){
     <div class="fg"><label class="fl">Notes</label><textarea class="fi" id="rd-notes" placeholder="How did it go?" rows="2" style="resize:vertical" maxlength="280"></textarea></div>
     <button type="submit" class="btn btn-primary btn-full">Save Session</button>
   </form>`;
-  if(window.lucide)lucide.createIcons();}
+  _createIcons();}
 
 function saveReading(e){
   e.preventDefault();
@@ -8728,7 +8718,7 @@ function renderLog(el){
     `}`;
   if(AppState.ui.logMode==='running') renderLogForm();
   else if(AppState.ui.logMode==='reading'){renderReadingLog(document.getElementById('rd-log-cont'));}
-  lucide.createIcons();
+  _createIcons();
   // init prehab toggle on cal form
   if(AppState.ui.logMode==='calisthenics') renderSavedWorkoutsList();
   const _wtSel=document.querySelector('.cal-type-btn.active');
@@ -8806,13 +8796,13 @@ function addEx(){
   if(exCount>=6)return;
   const list=$('#ex-list'); if(!list)return;
   const d=document.createElement('div'); d.innerHTML=mkExRow(exCount);
-  list.appendChild(d.firstElementChild); exCount++; lucide.createIcons();
+  list.appendChild(d.firstElementChild); exCount++; _createIcons();
 }
 function rmEx(i){ const r=$(`#ex-${i}`); if(r)r.remove(); }
 
 function mkCalExRow(i){
   return `<div class="ex-row" id="cal-ex-${i}" style="display:block;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px">
-    <div style="display:grid;grid-template-columns:22px 1fr 78px 40px 40px 30px;gap:5px;font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:3px;align-items:center">
+    <div style="display:grid;grid-template-columns:22px 1fr 78px 40px 40px 30px;gap:5px;font-size:10px;color:var(--text-3);font-weight:600;margin-bottom:3px;align-items:center">
       <span></span><span>Name</span><span>Type</span><span id="cal-hdr-sets-${i}">Sets</span><span>Reps</span><span></span>
     </div>
     <div style="display:grid;grid-template-columns:22px 1fr 78px 40px 40px 30px;gap:5px;align-items:center;margin-bottom:6px">
@@ -8849,7 +8839,7 @@ function addCalEx(){
   if(calExCount>=8)return;
   const list=$('#cal-ex-list'); if(!list)return;
   const d=document.createElement('div'); d.innerHTML=mkCalExRow(calExCount);
-  list.appendChild(d.firstElementChild); calExCount++; lucide.createIcons();
+  list.appendChild(d.firstElementChild); calExCount++; _createIcons();
 }
 function rmCalEx(i){ const r=document.getElementById('cal-ex-'+i); if(r)r.remove(); }
 function updCalExType(i){
@@ -9696,7 +9686,7 @@ function renderHistory(el){
     </button>
   </div>`;
   renderHistList();
-  lucide.createIcons();
+  _createIcons();
 }
 
 function setHistFilt(f){
@@ -9956,7 +9946,7 @@ function renderPlan(el){
     try{ window.APP.renderCalendar(); window.APP.scrollToCurrentWeek(); }
     finally{ _planCalEl.setAttribute('id',_savedId); }
   }
-  lucide.createIcons();
+  _createIcons();
 }
 function markPlanDone(id,type){
   const pool=type==='calisthenics'?AppState.calPlan:AppState.plan;
@@ -10058,7 +10048,7 @@ function showPlanDay(d){
     </div>`;
   }
   if(acts.length){
-    html+=`<div class="divider"></div><div style="font-size:10px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px">Completed</div>`;
+    html+=`<div class="divider"></div><div style="font-size:10px;font-weight:600;color:var(--text-3);margin-bottom:7px">Completed</div>`;
     acts.forEach(a=>html+=actCard(a));
   }
   if(!plan&&!acts.length) html+=`<div style="font-size:13px;color:var(--text-2)">Nothing planned or logged for this day.</div>`;
@@ -10125,6 +10115,8 @@ function renderTasks(el){
     T.lists=[{id:'general',name:'General',items:[]}];
     T.activeList=0;
   }
+  rcpEnsureShoppingList(); // guarantees T.lists[0].id === 'shopping-list'
+  const tskView=AppState.ui.tskView||'lists';
   const list=tskGetList();
   const {todo,done}=tskSortItems(list.items);
 
@@ -10149,15 +10141,42 @@ function renderTasks(el){
     </div>`;
 
   // ── List pills ─────────────────────────────────
-  const pillsHtml=T.lists.map((l,i)=>`
-    <button class="tsk-list-pill${i===T.activeList?' active':''}"
+  // Order: Shopping List (pinned, T.lists[0]) → Recipes (pseudo-tab, not a real list) → user's custom lists → "+ new list"
+  const _shopPillHtml=(()=>{
+    const l=T.lists[0], i=0;
+    return `<button class="tsk-list-pill${(tskView==='lists'&&i===T.activeList)?' active':''}"
+      onclick="tskSwitchList(${i})">
+      <i data-lucide="shopping-cart" style="width:13px;height:13px"></i>${l.name}
+    </button>`;
+  })();
+  const _recipesPillHtml=`<button class="tsk-list-pill${tskView==='recipes'?' active':''}"
+      onclick="rcpShowRecipes()">
+      <i data-lucide="chef-hat" style="width:13px;height:13px"></i>Recipes
+    </button>`;
+  const _customPillsHtml=T.lists.slice(1).map((l,idx)=>{
+    const i=idx+1;
+    return `<button class="tsk-list-pill${(tskView==='lists'&&i===T.activeList)?' active':''}"
       onclick="tskSwitchList(${i})">
       ${l.name}
-      ${T.lists.length>1?`<span class="tsk-pill-del" onclick="event.stopPropagation();tskDeleteList(${i})">✕</span>`:''}
-    </button>`).join('')+
+      <span class="tsk-pill-del" onclick="event.stopPropagation();tskDeleteList(${i})">✕</span>
+    </button>`;
+  }).join('');
+  const pillsHtml=_shopPillHtml+_recipesPillHtml+_customPillsHtml+
     `<button class="tsk-list-pill" onclick="tskNewList()" style="padding:5px 10px" aria-label="New list">
       <i data-lucide="plus" style="width:14px;height:14px"></i>
     </button>`;
+
+  // ── Recipes space: swap in the recipe browser instead of the task list body ──
+  if(tskView==='recipes'){
+    el.innerHTML=`
+      <div style="padding:20px 18px 24px">
+        ${_kpiHtml}
+        <div class="tsk-lists">${pillsHtml}</div>
+        ${rcpBodyHtml()}
+      </div>`;
+    _createIcons();
+    return;
+  }
 
   // ── Sort row ────────────────────────────────────
   const sorts=[['manual','Manual'],['due','Due Date'],['alpha','A–Z']];
@@ -10253,7 +10272,7 @@ function renderTasks(el){
           onkeyup="if(event.key==='Enter'||event.key==='Return')tskAddItem()">
       </div>
     </div>`;
-  lucide.createIcons();
+  _createIcons();
   tskInitDrag();
 
   // Restore done-open state
@@ -10267,6 +10286,7 @@ function tskRerender(){
 
 function tskSwitchList(i){
   AppState.tasks.activeList=i;
+  AppState.ui.tskView='lists';
   tskRerender();
   saveState();
 }
@@ -10298,7 +10318,7 @@ function tskConfirmNewList(){
 
 function tskDeleteList(i){
   const T=AppState.tasks;
-  if(T.lists.length<=1){showToast('Cannot delete the only list');return;}
+  if(T.lists[i]&&T.lists[i].id==='shopping-list'){showToast('The Shopping List can\'t be deleted');return;}
   if(!confirm('Delete list "'+T.lists[i].name+'"?'))return;
   T.lists.splice(i,1);
   T.activeList=Math.min(T.activeList,T.lists.length-1);
@@ -10436,13 +10456,21 @@ function tskSetSort(s){
   saveState();
 }
 
+// Shared item-creation path: used by tskAddItem() and by rcpAddToShoppingList()
+// so there is exactly one place that defines the shape of a task item.
+function tskCreateItem(list,title){
+  const item={id:tskId(),title,notes:'',due:'',done:false,subtasks:[]};
+  list.items.push(item);
+  return item;
+}
+
 function tskAddItem(){
   const inp=$('#tsk-new-input');
   if(!inp)return;
   const title=inp.value.trim();
   if(!title)return;
   const list=tskGetList();
-  list.items.push({id:tskId(),title,notes:'',due:'',done:false,subtasks:[]});
+  tskCreateItem(list,title);
   inp.value='';
   tskRerender();
   saveState();
@@ -10589,7 +10617,7 @@ function tskOpenSheet(id){
           <span>Done</span>
         </button>
       </div>`);
-    lucide.createIcons();
+    _createIcons();
     tskInitSubDrag(id);
   }
   renderSheet();
@@ -10632,7 +10660,7 @@ function tskSubAdd(itemId){
   const subsDiv=$('#tsk-sh-subs');
   if(subsDiv){
     subsDiv.insertAdjacentHTML('beforeend', tskSubHtml(itemId, newSub));
-    lucide.createIcons();
+    _createIcons();
     inp.value='';
     inp.focus();
   }
@@ -10701,6 +10729,258 @@ function tskDeleteItem(id){
   tskRerender();
   saveState();
 }
+
+/* === RECIPES + SHOPPING LIST FEATURE START ═══════════════════════════
+   Adds two fixed, non-deletable "spaces" alongside the user's own task
+   lists:
+     • Recipes        — a browsable collection stored in AppState.recipes,
+                         not a task list at all.
+     • Shopping List  — a REAL entry in AppState.tasks.lists[] (id
+                         'shopping-list'), rendered by the exact same
+                         tsk* code as any other list. Nothing
+                         shopping-specific is hardcoded into renderTasks/
+                         tskAddItem/tskToggleDone/tskDeleteItem/drag-reorder.
+   All new functions are "rcp"-prefixed to avoid colliding with "tsk". */
+
+let rcpIngCount=2;
+
+function rcpId(){ return 'r'+Date.now()+Math.random().toString(36).slice(2,6); }
+
+// Idempotent bootstrap — safe to call on every renderTasks() pass.
+// Pins the Shopping List at T.lists[0] so the pill row and "first list"
+// assumptions elsewhere stay simple.
+function rcpEnsureShoppingList(){
+  const T=AppState.tasks;
+  if(!T.lists.some(l=>l.id==='shopping-list')){
+    T.lists.unshift({id:'shopping-list',name:'Shopping List',items:[]});
+    T.activeList=(T.activeList||0)+1; // keep pointing at whatever was active before the shift
+  }
+}
+
+function rcpShowRecipes(){
+  AppState.ui.tskView='recipes';
+  tskRerender();
+  saveState();
+}
+
+// ── Recipe browser body (swapped in by renderTasks when tskView==='recipes') ──
+function rcpBodyHtml(){
+  const recipes=AppState.recipes||[];
+  const cardsHtml=recipes.length?recipes.map(r=>`
+    <div class="feed-card" onclick="rcpOpenSheet('${r.id}')">
+      <div class="feed-icon" style="background:color-mix(in oklab,var(--accent) 14%,var(--bg-2));color:var(--accent)">
+        <i data-lucide="utensils" style="width:17px;height:17px"></i>
+      </div>
+      <div class="feed-body">
+        <div class="feed-ttl">${r.name}</div>
+        <div class="feed-meta">${(r.ingredients||[]).length} ingredient${(r.ingredients||[]).length!==1?'s':''}</div>
+      </div>
+    </div>`).join(''):`
+    <div style="padding:44px 0 32px;text-align:center">
+      <div style="opacity:.25;margin-bottom:10px;display:flex;justify-content:center"><i data-lucide="chef-hat" style="width:28px;height:28px"></i></div>
+      <div style="font-size:14px;font-weight:500;color:var(--text-3)">No recipes yet</div>
+      <div style="font-size:12px;color:var(--text-3);margin-top:4px;opacity:.7">Tap "Add Recipe" to save your first one</div>
+    </div>`;
+  return `
+    <div id="rcp-list">${cardsHtml}</div>
+    <button class="btn btn-primary btn-full" style="margin-top:14px" onclick="rcpAddRecipe()">
+      <i data-lucide="plus" style="width:14px;height:14px"></i> Add Recipe
+    </button>`;
+}
+
+// ── Ingredient rows (mirrors mkExRow/addEx/rmEx exactly) ──
+function rcpMkIngRow(i,value=''){
+  return `<div class="ex-row" id="rcp-ing-${i}" style="grid-template-columns:1fr 34px">
+    <input type="text" placeholder="Ingredient name" id="rin-${i}" value="${(value||'').replace(/"/g,'&quot;')}">
+    <button type="button" class="ex-del" onclick="rcpRmIngRow(${i})"><i data-lucide="x" style="width:12px;height:12px"></i></button>
+  </div>`;
+}
+function rcpAddIngRow(){
+  if(rcpIngCount>=30)return;
+  const list=$('#rcp-ing-list'); if(!list)return;
+  const d=document.createElement('div'); d.innerHTML=rcpMkIngRow(rcpIngCount);
+  list.appendChild(d.firstElementChild); rcpIngCount++; _createIcons();
+}
+function rcpRmIngRow(i){ const r=$('#rcp-ing-'+i); if(r)r.remove(); }
+
+// ── Add Recipe sheet (one-time creation gate — name + ingredients required
+//    before anything is added to AppState.recipes) ──
+function rcpAddRecipe(){
+  rcpIngCount=2;
+  openSheet(`
+    <div class="sh-ttl" style="font-size:17px;font-weight:700;margin-bottom:16px">Add Recipe</div>
+    <div class="fg">
+      <label class="fl">Recipe name</label>
+      <input class="fi" id="rcp-name-inp" type="text" placeholder="e.g. Spaghetti Bolognese" autofocus>
+    </div>
+    <div class="fg">
+      <label class="fl">Ingredients</label>
+      <div id="rcp-ing-list">${[0,1].map(i=>rcpMkIngRow(i)).join('')}</div>
+      <button type="button" onclick="rcpAddIngRow()" class="btn btn-secondary" style="margin-top:8px;min-height:38px;padding:7px 12px;font-size:13px">
+        <i data-lucide="plus" style="width:13px;height:13px"></i> Add ingredient
+      </button>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="btn btn-secondary btn-full" onclick="closeSheet()">Cancel</button>
+      <button class="btn btn-primary btn-full" onclick="rcpConfirmAddRecipe()">Save Recipe</button>
+    </div>`);
+  _createIcons();
+  setTimeout(()=>{const i=$('#rcp-name-inp');if(i)i.focus();},120);
+}
+
+function rcpConfirmAddRecipe(){
+  const nameInp=$('#rcp-name-inp');
+  const name=nameInp?nameInp.value.trim():'';
+  if(!name){showToast('Please enter a recipe name');return;}
+  const ingredients=[];
+  for(let i=0;i<rcpIngCount;i++){
+    const nEl=$('#rin-'+i); if(!nEl)continue;
+    const nm=nEl.value.trim(); if(!nm)continue;
+    ingredients.push({id:rcpId(),name:nm});
+  }
+  if(!ingredients.length){showToast('Add at least one ingredient');return;}
+  AppState.recipes=AppState.recipes||[];
+  AppState.recipes.push({id:rcpId(),name,ingredients});
+  closeSheet();
+  tskRerender();
+  saveState();
+  showToast('Recipe saved!');
+}
+
+// ── Recipe detail sheet — ALWAYS live-editable (no separate edit mode).
+//    Mirrors the tsk-item detail sheet: the title is an <input> that saves
+//    on every keystroke (rcpShUpdate), and each ingredient row is likewise
+//    an <input> bound by a stable id (rcpIngUpdate/rcpIngAdd/rcpIngRemove),
+//    so nothing shifts out of sync when a row is added or removed. ──
+function rcpOpenSheet(id){
+  const recipe=(AppState.recipes||[]).find(r=>r.id===id);
+  if(!recipe)return;
+  // Normalize legacy shapes (plain strings, or old {name,qty,unit} objects) to {id,name}
+  recipe.ingredients=(recipe.ingredients||[]).map(ing=>
+    typeof ing==='string' ? {id:rcpId(),name:ing}
+    : ing.id ? ing
+    : {id:rcpId(),name:ing.name||''}
+  );
+
+  const ingHtml=recipe.ingredients.map(ing=>rcpShIngRow(id,ing)).join('');
+  openSheet(`
+    <div class="tsk-detail-header" style="margin-bottom:14px">
+      <div class="tsk-detail-title-wrap">
+        <input class="tsk-detail-title-inp" id="rcp-sh-name" type="text"
+          value="${recipe.name.replace(/"/g,'&quot;')}"
+          oninput="rcpShUpdate('${id}','name',this.value)"
+          placeholder="Recipe name">
+      </div>
+    </div>
+    <div class="tsk-sec-hdr">Ingredients</div>
+    <div class="tsk-subs-card" style="padding:6px 8px;margin-bottom:10px">
+      <div id="rcp-sh-ings">${ingHtml}</div>
+    </div>
+    <button type="button" onclick="rcpIngAdd('${id}')" class="btn btn-secondary btn-full" style="margin-bottom:18px">
+      <i data-lucide="plus" style="width:13px;height:13px"></i> Add ingredient
+    </button>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <button class="btn btn-primary btn-full" onclick="rcpAddToShoppingList('${id}')">
+        <i data-lucide="shopping-cart" style="width:14px;height:14px"></i> Add to Shopping List
+      </button>
+      <button class="tsk-detail-btn delete-btn" onclick="rcpDeleteRecipe('${id}')" aria-label="Delete recipe">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4.8c0-.7.5-1.3 1.3-1.3h5.4c.8 0 1.3.6 1.3 1.3V6"/><path d="M19 6l-1 13.2c-.1.8-.7 1.3-1.5 1.3H7.5c-.8 0-1.4-.5-1.5-1.3L5 6"/><path d="M10 10.5v6"/><path d="M14 10.5v6"/></svg>
+        <span>Delete recipe</span>
+      </button>
+    </div>`);
+  _createIcons();
+}
+
+// One ingredient row inside the live-editable detail sheet. Bound by ing.id
+// (not array index) so adding/removing rows never desyncs another row's
+// event handlers — same reasoning as tskSubHtml's use of s.id.
+function rcpShIngRow(id,ing){
+  return `<div class="ex-row" id="rcp-ing-${ing.id}" style="grid-template-columns:1fr 34px">
+    <input type="text" class="fi" placeholder="Ingredient name" value="${(ing.name||'').replace(/"/g,'&quot;')}"
+      oninput="rcpIngUpdate('${id}','${ing.id}',this.value)">
+    <button type="button" class="ex-del" onclick="rcpIngRemove('${id}','${ing.id}')"><i data-lucide="x" style="width:12px;height:12px"></i></button>
+  </div>`;
+}
+
+function rcpShUpdate(id,field,val){
+  const recipe=(AppState.recipes||[]).find(r=>r.id===id);
+  if(recipe){recipe[field]=val;saveState();}
+}
+
+function rcpIngUpdate(id,ingId,val){
+  const recipe=(AppState.recipes||[]).find(r=>r.id===id);
+  if(!recipe)return;
+  const ing=(recipe.ingredients||[]).find(x=>x.id===ingId);
+  if(ing){ing.name=val;saveState();}
+}
+
+function rcpIngAdd(id){
+  const recipe=(AppState.recipes||[]).find(r=>r.id===id);
+  if(!recipe)return;
+  if(!recipe.ingredients)recipe.ingredients=[];
+  const ing={id:rcpId(),name:''};
+  recipe.ingredients.push(ing);
+  saveState();
+  const wrap=$('#rcp-sh-ings');
+  if(wrap){
+    wrap.insertAdjacentHTML('beforeend', rcpShIngRow(id,ing));
+    _createIcons();
+    const row=document.getElementById('rcp-ing-'+ing.id);
+    const inp=row?row.querySelector('input'):null;
+    if(inp)inp.focus();
+  }
+}
+
+function rcpIngRemove(id,ingId){
+  const recipe=(AppState.recipes||[]).find(r=>r.id===id);
+  if(!recipe)return;
+  recipe.ingredients=(recipe.ingredients||[]).filter(ing=>ing.id!==ingId);
+  saveState();
+  const el=document.getElementById('rcp-ing-'+ingId);
+  if(el)el.remove();
+}
+
+function rcpDeleteRecipe(id){
+  if(!confirm('Delete this recipe?'))return;
+  AppState.recipes=(AppState.recipes||[]).filter(r=>r.id!==id);
+  closeSheet();
+  tskRerender();
+  saveState();
+}
+
+// ── Recipe → Shopping List integration ──
+// Reuses tskCreateItem() (the same path tskAddItem() uses) rather than
+// forking item-creation logic. Dedup skips creating a duplicate row when an
+// undone item with the same ingredient name already exists.
+function rcpAddToShoppingList(id){
+  const recipe=(AppState.recipes||[]).find(r=>r.id===id);
+  if(!recipe)return;
+  rcpEnsureShoppingList();
+  const shopIdx=AppState.tasks.lists.findIndex(l=>l.id==='shopping-list');
+  const shopList=AppState.tasks.lists[shopIdx];
+
+  let addedCount=0;
+  (recipe.ingredients||[]).forEach(ing=>{
+    const nm=(typeof ing==='string'?ing:(ing.name||'')).trim();
+    if(!nm)return;
+    const nameKey=nm.toLowerCase();
+
+    const existing=shopList.items.find(it=>!it.done&&it._ingName===nameKey);
+    if(!existing){
+      const item=tskCreateItem(shopList,nm);
+      item._ingName=nameKey;
+    }
+    addedCount++;
+  });
+
+  AppState.tasks.activeList=shopIdx;
+  AppState.ui.tskView='lists';
+  saveState();
+  closeSheet();
+  showToast(`Added ${addedCount} ingredient${addedCount!==1?'s':''} to Shopping List`);
+  navigate('#tasks'); // auto-navigate so the user sees the result
+}
+/* === RECIPES + SHOPPING LIST FEATURE END ═══════════════════════════ */
 
 
 /* ═══════════════════════════════════════════════════
@@ -11202,10 +11482,10 @@ function pfOpenFinance(){
 
 function pfShowPasswordSheet(){
   openSheet(`
-    <div style="background:linear-gradient(135deg,color-mix(in oklab,var(--accent) 12%,var(--bg-2)) 0%,var(--bg-2) 65%);border:1px solid color-mix(in oklab,var(--accent) 22%,var(--border));border-radius:12px;padding:16px 18px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="background:color-mix(in oklab,var(--accent) 12%,var(--bg-2));border:1px solid color-mix(in oklab,var(--accent) 22%,var(--border));border-radius:12px;padding:16px 18px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;">
       <div>
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);margin-bottom:4px;">Personal Finance</div>
-        <div style="font-size:17px;font-weight:800;color:var(--text);letter-spacing:-.02em;">Enter password to unlock</div>
+        <div style="font-size:10px;font-weight:600;color:var(--text-3);margin-bottom:4px">Personal Finance</div>
+        <div style="font-size:17px;font-weight:600;color:var(--text);letter-spacing:-.02em;">Enter password to unlock</div>
       </div>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="30" height="30" style="color:color-mix(in oklab,var(--accent) 60%,var(--text-3));flex-shrink:0"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </div>
@@ -11342,10 +11622,10 @@ function _pfRender(el){
       </div>
 
       <!-- History table -->
-      <div style="font-size:13px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Monthly History</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text-2);margin-bottom:10px">Monthly History</div>
       <!-- THIS MONTH -->
       <div id="pf-thismonth" style="margin-bottom:14px;">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+        <div style="font-size:11px;font-weight:600;color:var(--text-3);margin-bottom:10px;display:flex;align-items:center;gap:8px">
           This Month
           <span style="flex:1;height:1px;background:var(--border);display:block;"></span>
         </div>
@@ -11357,8 +11637,8 @@ function _pfRender(el){
         <div style="position:relative;background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:14px 14px 10px;overflow:hidden;">
           <canvas id="tm-chart" height="160" style="width:100%;display:block;"></canvas>
           <div id="tm-widget" style="position:absolute;top:10px;right:10px;background:var(--bg-3);border:1px solid var(--border);border-radius:10px;padding:6px 12px;text-align:right;min-width:90px;">
-            <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-3);margin-bottom:2px;">Spent</div>
-            <div id="tm-spent-val" style="font-size:18px;font-weight:800;letter-spacing:-.02em;color:var(--notification);font-variant-numeric:tabular-nums;">—</div>
+            <div style="font-size:9px;font-weight:600;color:var(--text-3);margin-bottom:2px">Spent</div>
+            <div id="tm-spent-val" style="font-size:18px;font-weight:600;letter-spacing:-.02em;color:var(--notification);font-variant-numeric:tabular-nums;">—</div>
           </div>
         </div>
       </div>
@@ -11395,10 +11675,10 @@ function pfAddEntrySheet(){
     suggestPeriod=`${ny}-${String(nm).padStart(2,'0')}`;
   }
   openSheet(`
-    <div style="background:linear-gradient(135deg,color-mix(in oklab,var(--success) 13%,var(--bg-2)) 0%,var(--bg-2) 65%);border:1px solid color-mix(in oklab,var(--success) 24%,var(--border));border-radius:12px;padding:16px 18px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="background:color-mix(in oklab,var(--success) 13%,var(--bg-2));border:1px solid color-mix(in oklab,var(--success) 24%,var(--border));border-radius:12px;padding:16px 18px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;">
       <div>
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);margin-bottom:4px;">New Monthly Entry</div>
-        <div style="font-size:22px;font-weight:800;letter-spacing:-.03em;color:var(--text);font-variant-numeric:tabular-nums;" id="pfe-live-total">€ —</div>
+        <div style="font-size:10px;font-weight:600;color:var(--text-3);margin-bottom:4px">New Monthly Entry</div>
+        <div style="font-size:22px;font-weight:600;letter-spacing:-.03em;color:var(--text);font-variant-numeric:tabular-nums;" id="pfe-live-total">€ —</div>
         <div style="font-size:11px;color:var(--text-3);margin-top:2px;">total balance preview</div>
       </div>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32" style="color:color-mix(in oklab,var(--success) 50%,var(--text-3));flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
@@ -11409,7 +11689,7 @@ function pfAddEntrySheet(){
       <input class="pf-fi" id="pfe-period" type="month" value="${suggestPeriod}">
     </div>
 
-    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+    <div style="font-size:10px;font-weight:600;color:var(--text-3);margin-bottom:10px;display:flex;align-items:center;gap:8px">
       Accounts
       <span style="flex:1;height:1px;background:var(--border);display:block;"></span>
     </div>
@@ -12017,7 +12297,7 @@ init();
         histWrap=document.createElement('div');
         histWrap.id='tm-history-wrap';
         histWrap.style.cssText='margin-top:8px;display:flex;flex-direction:column;gap:5px;';
-        histWrap.innerHTML='<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-3);margin-bottom:2px;">Snapshots</div><div id="tm-history-list"></div>';
+        histWrap.innerHTML='<div style="font-size:10px;font-weight:600;color:var(--text-3);margin-bottom:2px">Snapshots</div><div id="tm-history-list"></div>';
         chartParent.after(histWrap);
       }
     }
@@ -12391,7 +12671,7 @@ window.APP=APP;
     if(homeEl&&homeEl.classList.contains('active')&&typeof renderHome==='function'){
       homeEl.innerHTML='';
       renderHome(homeEl);
-      if(typeof lucide!=='undefined')lucide.createIcons();
+      _createIcons();
     }
   })();
 })();
