@@ -1253,43 +1253,30 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* ── 2. KPI Row — transparent property strip, dividers only ───────── */
 #pg-home .kpi-row {
-  gap: 0 !important;
+  gap: 8px !important;
   border: none !important;
-  border-bottom: 1px solid var(--border) !important;
   margin-bottom: 20px !important;
   background: transparent !important;
 }
 
 #pg-home .kpi-row .kpi-card {
-  background: transparent !important;
-  border: none !important;
-  border-right: 1px solid var(--border) !important;
-  border-radius: 0 !important;
-  padding: 10px 14px !important;
+  background: var(--bg-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
 }
 
-#pg-home .kpi-row .kpi-card:last-child {
-  border-right: none !important;
-}
-
-/* Mobile: stack without right dividers */
+/* Mobile: 2-up grid of rounded cards */
 @media (max-width: 539px) {
   #pg-home .kpi-row {
     grid-template-columns: repeat(2, 1fr) !important;
-    row-gap: 0 !important;
+    row-gap: 8px !important;
   }
   #pg-home .kpi-row .kpi-card {
-    border-right: none !important;
-    border-bottom: 1px solid var(--border) !important;
-    padding: 10px 12px !important;
-  }
-  #pg-home .kpi-row .kpi-card:nth-child(odd) {
-    border-right: 1px solid var(--border) !important;
+    padding: 12px 12px !important;
   }
   #pg-home .kpi-row .kpi-card:last-child {
-    border-bottom: none !important;
     grid-column: 1 / -1 !important;
-    border-right: none !important;
   }
 }
 
@@ -1318,17 +1305,12 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 #pg-home .kpi-row .kpi-card:nth-child(5) {
   grid-column: auto !important;
   display: block !important;
-  background: transparent !important;
-  padding: 10px 14px !important;
+  background: var(--bg-2) !important;
+  padding: 12px 14px !important;
 }
 @media (max-width: 539px) {
   #pg-home .kpi-row .kpi-card:nth-child(5) {
-    padding: 10px 12px !important;
-  }
-}
-@media (min-width: 540px) {
-  #pg-home .kpi-row .kpi-card:nth-child(5) {
-    border-right: none !important;
+    padding: 12px 12px !important;
   }
 }
 #pg-home .kpi-row .kpi-card:nth-child(5) .kpi-lbl {
@@ -5783,20 +5765,12 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   padding-left: 14px !important;
 }
 
-/* The featured "hero" cards elsewhere force a tinted background + border
-   via !important; neutralise those so they match the open treatment,
-   keeping only the accent-coloured text they already use. */
-#pg-home .kpi-row .kpi-card:nth-child(1),
-#pg-home .cal-kpi-row .kpi-card:nth-child(1),
-#pg-home .rd-kpi-row .kpi-card:nth-child(1),
-.kpi-row .kpi-card:nth-child(5) {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-}
-#pg-home .kpi-row .kpi-card:nth-child(1) {
-  border-left: 1px solid var(--border) !important;
-}
+/* NOTE: a rule used to sit here neutralising the featured "hero" cards
+   (Monthly km / cal & reading home first cards / old 5th card) back to
+   background:transparent; border:none; border-radius:0 — that's what was
+   making Monthly km render with square corners while its sibling cards
+   stayed rounded. Removed so the tinted hero-card styling (background,
+   border, 14px radius) defined earlier applies consistently everywhere. */
 
 /* ── 4. Soften remaining heavy container chrome ───────────────────── */
 /* Standardise card corner radius to a calmer 8px and thin any 1.5px+
