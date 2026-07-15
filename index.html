@@ -267,7 +267,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ── CALISTHENICS CHECK CARDS (Notion-style horizontal) ─────────── */
-.cal-check-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+.cal-check-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
 .cal-check-card{
   background:var(--bg-2);border:1px solid var(--border);border-radius:12px;
   padding:13px 11px;display:flex;flex-direction:column;align-items:flex-start;gap:7px;
@@ -813,6 +813,9 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 .rd-type-btn{flex:1;min-width:80px;padding:8px 10px;border-radius:99px;border:1.5px solid var(--border);background:var(--bg-2);font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--text-2);cursor:pointer;transition:all 140ms ease;text-align:center}
 .rd-type-btn:hover{border-color:var(--rd-blue);color:var(--rd-blue)}
 .rd-type-btn.active{border-color:var(--rd-blue);background:color-mix(in oklab,var(--rd-blue) 10%,var(--bg));color:var(--rd-blue)}
+.rd-subtype-btn{flex:1;min-width:110px;padding:8px 10px;border-radius:99px;border:1.5px solid var(--border);background:var(--bg-2);font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--text-2);cursor:pointer;transition:all 140ms ease;text-align:center}
+.rd-subtype-btn:hover{border-color:var(--rd-purple);color:var(--rd-purple)}
+.rd-subtype-btn.active{border-color:var(--rd-purple);background:color-mix(in oklab,var(--rd-purple) 10%,var(--bg));color:var(--rd-purple)}
 .cal-type-btn{flex:1;min-width:70px;padding:8px 10px;border-radius:99px;border:1.5px solid var(--border);background:var(--bg-2);font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--text-2);cursor:pointer;transition:all 140ms ease;text-align:center}
 .cal-type-btn:hover{border-color:var(--rd-purple);color:var(--rd-purple)}
 .cal-type-btn.active{border-color:var(--rd-purple);background:color-mix(in oklab,var(--rd-purple) 10%,var(--bg));color:var(--rd-purple)}
@@ -2013,7 +2016,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 #pg-home .cal-check-row {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-columns: repeat(2, 1fr) !important;
   gap: 9px !important;
   margin-bottom: 20px !important;
 }
@@ -2057,26 +2060,23 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 
 /* Undone state: color-coded top accent line per card */
 #pg-home .cal-check-row .cal-check-card:nth-child(1) {
-  border-top: 3px solid rgba(139,92,246,0.35) !important;
-}
-#pg-home .cal-check-row .cal-check-card:nth-child(2) {
   border-top: 3px solid rgba(232,71,10,0.35) !important;
 }
-#pg-home .cal-check-row .cal-check-card:nth-child(3) {
+#pg-home .cal-check-row .cal-check-card:nth-child(2) {
   border-top: 3px solid rgba(61,153,112,0.35) !important;
 }
 
 /* ── DONE: each card becomes its own solid color ──────────────── */
 
-/* Pull done → solid purple */
+/* Pull & Push done → solid orange */
 #pg-home .cal-check-row .cal-check-card:nth-child(1).done {
-  background: linear-gradient(145deg, #8b5cf6 0%, #7c3aed 100%) !important;
+  background: linear-gradient(145deg, var(--accent) 0%, color-mix(in oklab, var(--accent) 82%, #000) 100%) !important;
   border: none !important;
   border-top: none !important;
-  box-shadow: 0 4px 16px rgba(139,92,246,0.30) !important;
+  box-shadow: 0 4px 16px rgba(232,71,10,0.30) !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(1).done:hover {
-  box-shadow: 0 6px 20px rgba(139,92,246,0.40) !important;
+  box-shadow: 0 6px 20px rgba(232,71,10,0.40) !important;
   border: none !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(1).done .cc-icon,
@@ -2084,15 +2084,15 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: rgba(255,255,255,0.92) !important;
 }
 
-/* Push done → solid orange */
+/* Prehab done → solid green */
 #pg-home .cal-check-row .cal-check-card:nth-child(2).done {
-  background: linear-gradient(145deg, var(--accent) 0%, color-mix(in oklab, var(--accent) 85%, #000) 100%) !important;
+  background: linear-gradient(145deg, var(--success) 0%, color-mix(in oklab, var(--success) 82%, #000) 100%) !important;
   border: none !important;
   border-top: none !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.30) !important;
+  box-shadow: 0 4px 16px rgba(61,153,112,0.30) !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(2).done:hover {
-  box-shadow: 0 6px 20px rgba(232,71,10,0.40) !important;
+  box-shadow: 0 6px 20px rgba(61,153,112,0.40) !important;
   border: none !important;
 }
 #pg-home .cal-check-row .cal-check-card:nth-child(2).done .cc-icon,
@@ -2100,35 +2100,19 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   color: rgba(255,255,255,0.92) !important;
 }
 
-/* Prehab done → solid green */
-#pg-home .cal-check-row .cal-check-card:nth-child(3).done {
-  background: linear-gradient(145deg, var(--success) 0%, color-mix(in oklab, var(--success) 82%, #000) 100%) !important;
-  border: none !important;
-  border-top: none !important;
-  box-shadow: 0 4px 16px rgba(61,153,112,0.30) !important;
-}
-#pg-home .cal-check-row .cal-check-card:nth-child(3).done:hover {
-  box-shadow: 0 6px 20px rgba(61,153,112,0.40) !important;
-  border: none !important;
-}
-#pg-home .cal-check-row .cal-check-card:nth-child(3).done .cc-icon,
-#pg-home .cal-check-row .cal-check-card:nth-child(3).done .cc-lbl {
-  color: rgba(255,255,255,0.92) !important;
-}
-
 /* ── PARTIAL: prehab incomplete ─────────────────────────────────── */
-#pg-home .cal-check-row .cal-check-card:nth-child(3).partial {
+#pg-home .cal-check-row .cal-check-card:nth-child(2).partial {
   background: linear-gradient(145deg, var(--warning) 0%, color-mix(in oklab, var(--warning) 82%, #000) 100%) !important;
   border: none !important;
   border-top: none !important;
   box-shadow: 0 4px 16px rgba(240,165,0,0.30) !important;
 }
-#pg-home .cal-check-row .cal-check-card:nth-child(3).partial:hover {
+#pg-home .cal-check-row .cal-check-card:nth-child(2).partial:hover {
   box-shadow: 0 6px 20px rgba(240,165,0,0.40) !important;
   border: none !important;
 }
-#pg-home .cal-check-row .cal-check-card:nth-child(3).partial .cc-icon,
-#pg-home .cal-check-row .cal-check-card:nth-child(3).partial .cc-lbl {
+#pg-home .cal-check-row .cal-check-card:nth-child(2).partial .cc-icon,
+#pg-home .cal-check-row .cal-check-card:nth-child(2).partial .cc-lbl {
   color: rgba(255,255,255,0.92) !important;
 }
 
@@ -2147,12 +2131,10 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
 /* ═══════════════════════════════════════════════════════════════════
    CALISTHENICS COLOUR CORRECTION
    Plan canonical colours (from Running Manual, getStripColor()):
-     PC = Pull calisthenics (Monday)  → var(--accent)  = orange
-     PL = Push / Leg strength (Wed)   → #8b5cf6        = purple
-   Previous block had Pull ↔ Push swapped. This corrects them.
+     PP = Pull & Push calisthenics (Tuesday) → var(--accent) = orange
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ── KPI CARD 1: Pull-ups → ORANGE (pull = PC = accent) ─────────── */
+/* ── KPI CARD 1: Pull-ups → ORANGE (pull = accent) ─────────── */
 #pg-home .cal-kpi-row .kpi-card:nth-child(1) {
   background: linear-gradient(135deg,
     color-mix(in oklab, var(--accent) 9%, var(--bg-2)) 0%,
@@ -2174,7 +2156,7 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
     var(--bg-2) 70%) !important;
 }
 
-/* ── KPI CARD 2: Dips → PURPLE (dips = push exercise = PL = purple) */
+/* ── KPI CARD 2: Dips → PURPLE (accent secondary) */
 #pg-home .cal-kpi-row .kpi-card:nth-child(2) {
   background: linear-gradient(135deg,
     color-mix(in oklab, #8b5cf6 8%, var(--bg-2)) 0%,
@@ -2196,49 +2178,6 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   background: linear-gradient(135deg,
     color-mix(in oklab, #8b5cf6 12%, var(--bg-2)) 0%,
     var(--bg-2) 70%) !important;
-}
-
-/* ── CHECK CARD 1: Pull top border → ORANGE ─────────────────────── */
-#pg-home .cal-check-row .cal-check-card:nth-child(1) {
-  border-top: 3px solid rgba(232,71,10,0.35) !important;
-}
-
-/* Pull DONE → solid orange (same gradient as Streak / running KPIs) */
-#pg-home .cal-check-row .cal-check-card:nth-child(1).done {
-  background: linear-gradient(145deg, var(--accent) 0%,
-    color-mix(in oklab, var(--accent) 82%, #000) 100%) !important;
-  border: none !important;
-  border-top: none !important;
-  box-shadow: 0 4px 16px rgba(232,71,10,0.30) !important;
-}
-#pg-home .cal-check-row .cal-check-card:nth-child(1).done:hover {
-  box-shadow: 0 6px 20px rgba(232,71,10,0.40) !important;
-  border: none !important;
-}
-#pg-home .cal-check-row .cal-check-card:nth-child(1).done .cc-icon,
-#pg-home .cal-check-row .cal-check-card:nth-child(1).done .cc-lbl {
-  color: rgba(255,255,255,0.92) !important;
-}
-
-/* ── CHECK CARD 2: Push top border → PURPLE ─────────────────────── */
-#pg-home .cal-check-row .cal-check-card:nth-child(2) {
-  border-top: 3px solid rgba(139,92,246,0.35) !important;
-}
-
-/* Push DONE → solid purple */
-#pg-home .cal-check-row .cal-check-card:nth-child(2).done {
-  background: linear-gradient(145deg, #8b5cf6 0%, color-mix(in oklab, #8b5cf6 82%, #000) 100%) !important;
-  border: none !important;
-  border-top: none !important;
-  box-shadow: 0 4px 16px rgba(139,92,246,0.30) !important;
-}
-#pg-home .cal-check-row .cal-check-card:nth-child(2).done:hover {
-  box-shadow: 0 6px 20px rgba(139,92,246,0.40) !important;
-  border: none !important;
-}
-#pg-home .cal-check-row .cal-check-card:nth-child(2).done .cc-icon,
-#pg-home .cal-check-row .cal-check-card:nth-child(2).done .cc-lbl {
-  color: rgba(255,255,255,0.92) !important;
 }
 
 /* ── END COLOUR CORRECTION ─────────────────────────────────────── */
@@ -2961,29 +2900,17 @@ textarea.fi{resize:vertical;min-height:76px;line-height:1.5}
   cursor: pointer !important;
 }
 
-/* Pull hover / active — orange (PC = Pull calisthenics = accent) */
-#pg-log #cal-form .cal-type-btn[data-type="Pull"]:hover {
+/* Pull & Push hover / active — orange (accent) */
+#pg-log #cal-form .cal-type-btn[data-type="Pull & Push"]:hover {
   border-color: var(--accent) !important;
   color: var(--accent) !important;
 }
-#pg-log #cal-form .cal-type-btn.active[data-type="Pull"] {
+#pg-log #cal-form .cal-type-btn.active[data-type="Pull & Push"] {
   background: linear-gradient(145deg, var(--accent) 0%,
     color-mix(in oklab, var(--accent) 82%, #000) 100%) !important;
   border-color: transparent !important;
   color: #fff !important;
   box-shadow: 0 3px 10px rgba(232,71,10,0.28) !important;
-}
-
-/* Push hover / active — purple (PL = Push/Legs = #8b5cf6) */
-#pg-log #cal-form .cal-type-btn[data-type="Push"]:hover {
-  border-color: #8b5cf6 !important;
-  color: #8b5cf6 !important;
-}
-#pg-log #cal-form .cal-type-btn.active[data-type="Push"] {
-  background: linear-gradient(145deg, #8b5cf6 0%, #7c3aed 100%) !important;
-  border-color: transparent !important;
-  color: #fff !important;
-  box-shadow: 0 3px 10px rgba(139,92,246,0.28) !important;
 }
 
 /* Prehab hover / active — green */
@@ -7442,10 +7369,11 @@ function computeExpectedPeakCTL() {
   // Expected zone paces from threshold (sec/km)
   const ZONE_PACE = { Z1: THR*1.40, Z2: THR*1.24, Z3: THR*1.00, Z4: THR, Z5: THR*0.90 };
   const STR_LOAD  = 6 * 0.5 * 45;          // calisthenics load unchanged
-  const DAY_IDX   = { PC:1, SR:2, PL:3, LR:5 };
+  const DAY_IDX   = { PP:1, SR:2, LR:5 };
 
   function sessLoad(s) {
-    if (s.sessionType === 'PC' || s.sessionType === 'PL') return STR_LOAD;
+    // PP (Pull & Push, Tuesday) combines both former sessions, so it carries 2× the load of one.
+    if (s.sessionType === 'PP') return STR_LOAD*2;
     if (!s.km) return 0;
     const paceSec = ZONE_PACE[s.zone || 'Z2'] || (THR * 1.24);
     const IF      = THR / paceSec;
@@ -7619,9 +7547,8 @@ let charts={};
 
 function destroyCharts(){Object.values(charts).forEach(c=>{try{c.destroy()}catch(e){}});charts={};}
 
-function navigate(hash){if(hash!=='#log')rdTimerReset();
+function navigate(hash){
   if(!PAGE_CFG[hash]) hash='#home';
-  if(typeof timerReset==='function'&&hash!=='#log') timerReset();
   AppState.ui.tab=hash;
   $$('.page').forEach(p=>p.classList.remove('active'));
   destroyCharts();
@@ -7717,8 +7644,8 @@ function actCard(a){
   if(a.type==='calisthenics'){
     const wt=a.workout_type||'Calisthenics';
     const isPrehab=wt==='Prehab';
-    // Colour: Pull=accent, Push=purple, Prehab=success/warning
-    const accentCol=wt==='Pull'||wt==='Strength A'?'var(--accent)':
+    // Colour: Pull & Push=accent, Prehab=success/warning, legacy Push=purple
+    const accentCol=wt==='Pull & Push'||wt==='Pull'||wt==='Strength A'?'var(--accent)':
                     isPrehab?(a.prehab_complete===false?'var(--warning)':'var(--success)'):
                     '#8b5cf6';
 
@@ -7827,8 +7754,7 @@ function actCard(a){
 function getStripColor(sessionType, srType) {
   if (sessionType === 'LR')   return '#3b82f6';
   if (sessionType === 'RACE') return 'var(--accent)';
-  if (sessionType === 'PC')   return 'var(--accent)';
-  if (sessionType === 'PL')   return '#8b5cf6';
+  if (sessionType === 'PP')   return 'var(--accent)';
   if (sessionType === 'SR' && srType) {
     const w = srType.replace(/\s+/g,'');
     const map = {
@@ -7969,7 +7895,7 @@ function renderHome(el){
     if(planned){
       const st=planned.sessionType;
       const isRun=st==='LR'||st==='SR'||st==='RACE';
-      const isStr=st==='PC'||st==='PL';
+      const isStr=st==='PP';
       const runCol=getStripColor(st, planned.type);
 
       if(isRun){
@@ -7991,11 +7917,11 @@ function renderHome(el){
           dotTxt=kmLbl;
         }
       } else if(isStr){
-        const strLbl=st==='PC'?'Pull':'Push';
+        const strLbl='P&P';
         // 60% more transparent than run circles (bg × 0.40, text × 0.40)
-        const strBgD =runCol==='#8b5cf6'?'rgba(139,92,246,.40)':'rgba(232,71,10,.40)';
-        const strBgP =runCol==='#8b5cf6'?'rgba(139,92,246,.07)':'rgba(232,71,10,.07)';
-        const strTxt =runCol==='#8b5cf6'?'rgba(139,92,246,.40)':'rgba(232,71,10,.40)';
+        const strBgD ='rgba(232,71,10,.40)';
+        const strBgP ='rgba(232,71,10,.07)';
+        const strTxt ='rgba(232,71,10,.40)';
         if(loggedStr){
           bg=strBgD; txtC=strTxt;
           dotTxt=strLbl;
@@ -8079,8 +8005,7 @@ function renderHome(el){
   const calDayPullups = wd.map(d=>AppState.activities.filter(a=>a.type==='calisthenics'&&a.date===d).reduce((s,a)=>s+(a.pullups||0),0));
   const calDayDips    = wd.map(d=>AppState.activities.filter(a=>a.type==='calisthenics'&&a.date===d).reduce((s,a)=>s+(a.dips||0),0));
   // ── This-week workout type checks ────────────────────────────────────────
-  const pullDone   = calActs.some(a=>a.workout_type==='Pull'||a.workout_type==='Strength A');
-  const pushDone   = calActs.some(a=>a.workout_type==='Push'||a.workout_type==='Strength B');
+  const ppDone     = calActs.some(a=>a.workout_type==='Pull & Push'||a.workout_type==='Pull'||a.workout_type==='Push'||a.workout_type==='Strength A'||a.workout_type==='Strength B');
   const _prehabAct  = calActs.find(a=>a.workout_type==='Prehab');
   const prehabDone  = !!_prehabAct && _prehabAct.prehab_complete!==false;
   const prehabWarn  = !!_prehabAct && _prehabAct.prehab_complete===false;
@@ -8116,14 +8041,11 @@ function renderHome(el){
     const calFeed=[...AppState.activities].filter(a=>a.type==='calisthenics').sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3);
     const calFeedHtml=calFeed.length?calFeed.map(a=>{
       const wt=a.workout_type||'Calisthenics';
-      const col=wt==='Pull'||wt==='Strength A'?'var(--accent)':wt==='Push'||wt==='Strength B'?'#8b5cf6':wt==='Prehab'?(a.prehab_complete===false?'var(--warning)':'var(--success)'):'var(--success)';
-      const _isPull=wt==='Pull'||wt==='Strength A';
-      const _isPush=wt==='Push'||wt==='Strength B';
+      const _isPP=wt==='Pull & Push'||wt==='Pull'||wt==='Push'||wt==='Strength A'||wt==='Strength B';
+      const col=_isPP?'var(--accent)':wt==='Prehab'?(a.prehab_complete===false?'var(--warning)':'var(--success)'):'var(--success)';
       const _isPrehab=wt==='Prehab';
-      const _icoInner=_isPull
+      const _icoInner=_isPP
         ?`<line x1="3" y1="5" x2="21" y2="5"/><line x1="7" y1="5" x2="10" y2="10.5"/><line x1="17" y1="5" x2="14" y2="10.5"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="14" x2="12" y2="19"/><line x1="12" y1="19" x2="9.5" y2="23"/><line x1="12" y1="19" x2="14.5" y2="23"/>`
-        :_isPush
-        ?`<line x1="3" y1="20" x2="21" y2="20"/><circle cx="7" cy="11" r="2"/><polyline points="9,12.5 13,14 17,16 20,18"/><polyline points="10,13 9.5,16 8.5,20"/>`
         :_isPrehab
         ?`<circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.07" y2="4.93"/>`
         :`<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`;
@@ -8142,23 +8064,20 @@ function renderHome(el){
       let bg='var(--bg-3)',txtC='var(--text-3)',dotTxt=String(dt.getDate()),dotStyle='';
 
       // ── Color palette (mirrors running home strip exactly) ──────────
-      // PC = Pull/Chin day → orange (accent)  matches KPI card 1 Pull-ups
-      // PL = Push/Legs day → purple #8b5cf6
+      // PP = Pull & Push day → orange (accent)  matches KPI card 1 Pull-ups
       // SR = Prehab/Short  → green (success)
       // LR = Long Run      → blue #3b82f6
 
       if(planned){
         const st=planned.sessionType;
         const isRun=st==='LR'||st==='SR';
-        const isStr=st==='PC'||st==='PL';
+        const isStr=st==='PP';
 
         if(isStr){
-          // Pull (PC) = orange/accent; Push (PL) = purple
-          const isPull=st==='PC';
-          const strLbl=isPull?'Pull':'Push';
-          const solidBg =isPull?'rgba(232,71,10,.40)'  :'rgba(139,92,246,.40)';
-          const ghostBg =isPull?'rgba(232,71,10,.07)'  :'rgba(139,92,246,.07)';
-          const strTxt  =isPull?'rgba(232,71,10,.60)'  :'rgba(139,92,246,.60)';
+          const strLbl='P&P';
+          const solidBg ='rgba(232,71,10,.40)';
+          const ghostBg ='rgba(232,71,10,.07)';
+          const strTxt  ='rgba(232,71,10,.60)';
           if(loggedCal){
             bg=solidBg; txtC=strTxt; dotTxt=strLbl;
           } else {
@@ -8182,10 +8101,9 @@ function renderHome(el){
         }
       } else if(loggedCal){
         // Manually logged cal not in plan — use same palette
-        const wt=loggedCal.workout_type||'Pull';
-        if(wt==='Pull')     {bg='rgba(232,71,10,.40)'; txtC='rgba(232,71,10,.60)'; dotTxt='Pull';}
-        else if(wt==='Push'){bg='rgba(139,92,246,.40)'; txtC='rgba(139,92,246,.60)'; dotTxt='Push';}
-        else                {bg='var(--success)'; txtC='#fff'; dotTxt='Pre';}
+        const wt=loggedCal.workout_type||'Pull & Push';
+        if(wt==='Prehab'){bg='var(--success)'; txtC='#fff'; dotTxt='Pre';}
+        else             {bg='rgba(232,71,10,.40)'; txtC='rgba(232,71,10,.60)'; dotTxt='P&P';}
       } else if(loggedRun){
         // Manually logged run not in plan
         bg='rgba(59,130,246,.33)'; txtC='rgba(59,130,246,.80)';
@@ -8208,13 +8126,9 @@ function renderHome(el){
   </div>
   <div class="sec-hdr" style="margin-top:6px"><span class="sec-ttl">Week's workouts</span></div>
   <div class="cal-check-row">
-    <div class="cal-check-card ${pullDone?'done':''}">
-      ${pullDone?'<svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>':'<svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>'}
-      <div class="cc-lbl">Pull</div>
-    </div>
-    <div class="cal-check-card ${pushDone?'done':''}">
-      ${pushDone?'<svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>':'<svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>'}
-      <div class="cc-lbl">Push</div>
+    <div class="cal-check-card ${ppDone?'done':''}">
+      ${ppDone?'<svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>':'<svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>'}
+      <div class="cc-lbl">Pull & Push</div>
     </div>
     <div class="cal-check-card ${prehabWarn?'partial':prehabDone?'done':''}">
       ${prehabDone?'<svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>':'<svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>'}
@@ -8399,8 +8313,8 @@ function showDayPopover(d,chip){
       html+=dpRow('Zone',`<span class="dp-zone" style="background:${zcol}20;color:${zcol}">${zone} · ${ZONE_NAME[zone]||zone}</span>`);
       if(km) html+=dpRow('Distance',km+' km');
       if(paceRange) html+=dpRow('Pace',`<span class="num">${paceRange}</span>`);
-    } else if(st==='PC'||st==='PL'){
-      html+=`<div class="dp-rest" style="text-align:left;color:var(--text)">Calisthenics — ${st==='PC'?'Pull (Monday)':'Push (Wednesday)'}</div>`;
+    } else if(st==='PP'){
+      html+=`<div class="dp-rest" style="text-align:left;color:var(--text)">Calisthenics — Pull & Push (Tuesday)</div>`;
     }
   } else {
     html+=`<div class="dp-rest">Rest day</div>`;
@@ -8481,26 +8395,6 @@ let logTab='run', exCount=3, calExCount=3;
 
 
 /* ═══════════════════════════════════════ READING & WRITING ═══ */
-let _rdSec=0,_rdRunning=false,_rdIv=null;
-function _rdFmt(s){const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=s%60;
-  return h?`${h}:${String(m).padStart(2,'0')}:${String(sc).padStart(2,'0')}`:
-    `${String(m).padStart(2,'0')}:${String(sc).padStart(2,'0')}`;}
-function rdTimerStart(){if(_rdRunning)return;_rdRunning=true;
-  _rdIv=setInterval(()=>{_rdSec++;const el=document.querySelector('.rd-t-time');if(el)el.textContent=_rdFmt(_rdSec);},1000);
-  document.querySelector('.rd-t-disp')?.classList.add('running');_rdBtns();}
-function rdTimerPause(){if(!_rdRunning)return;_rdRunning=false;clearInterval(_rdIv);_rdIv=null;
-  const w=document.querySelector('.rd-t-disp');if(w){w.classList.remove('running');w.classList.add('paused');}
-  const d=document.getElementById('rd-dur');if(d&&!d.value)d.value=Math.max(1,Math.ceil(_rdSec/60));
-  _rdBtns();}
-function rdTimerReset(){_rdRunning=false;clearInterval(_rdIv);_rdIv=null;_rdSec=0;
-  const el=document.querySelector('.rd-t-time');if(el)el.textContent='00:00';
-  const w=document.querySelector('.rd-t-disp');if(w){w.classList.remove('running','paused');}_rdBtns();}
-function _rdBtns(){const bw=document.querySelector('.rd-t-btns');if(!bw)return;
-  if(_rdRunning)bw.innerHTML=`<button type="button" class="cal-timer-pill pause" onclick="rdTimerPause()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>Pause</button><button type="button" class="cal-timer-pill reset" onclick="rdTimerReset()">Reset</button>`;
-  else if(_rdSec>0)bw.innerHTML=`<button type="button" class="cal-timer-pill start" onclick="rdTimerStart()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>Resume</button><button type="button" class="cal-timer-pill reset" onclick="rdTimerReset()">Reset</button>`;
-  else bw.innerHTML=`<button type="button" class="cal-timer-pill start" onclick="rdTimerStart()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>Start</button>`;}
-function _rdMins(){return _rdSec>0?Math.max(1,Math.ceil(_rdSec/60)):null;}
-
 function rdMonthStreak(actType,field,target){
   let streak=0,y=TODAY.getFullYear(),m=TODAY.getMonth()-1;
   if(m<0){m=11;y--;}
@@ -8511,10 +8405,12 @@ function rdMonthStreak(actType,field,target){
   return streak;}
 function rdWeekStreak(actType,field,target){function wkStart(d){const t=new Date(d);const day=t.getDay()||7;t.setDate(t.getDate()-day+1);return t;}function wkDates(d){const s=wkStart(d);const arr=[];for(let i=0;i<7;i++){const dd=new Date(s);dd.setDate(s.getDate()+i);arr.push(iso(dd));}return arr;}const curWk=wkDates(TODAY);const curTot=AppState.activities.filter(a=>a.type==='reading'&&a.activity_type===actType&&curWk.includes(a.date)).reduce((s,a)=>s+(a[field]||0),0);let streak=curTot>=target?1:0;const base=wkStart(TODAY);for(let i=1;i<520;i++){const ws=new Date(base);ws.setDate(base.getDate()-i*7);const wk=wkDates(ws);const tot=AppState.activities.filter(a=>a.type==='reading'&&a.activity_type===actType&&wk.includes(a.date)).reduce((s,a)=>s+(a[field]||0),0);if(tot>=target)streak++;else break;}return streak;}
 function setRdType(type){
-  document.querySelectorAll('.rd-type-btn').forEach(b=>b.classList.toggle('active',b.dataset.type===type));
+  document.querySelectorAll('#rd-activity-type-row .rd-type-btn').forEach(b=>b.classList.toggle('active',b.dataset.type===type));
   ['rd-fg-book','rd-fg-pages'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display=type==='reading'?'':'none';});
   const w=document.getElementById('rd-fg-words');if(w)w.style.display=type==='writing'?'':'none';
-  rdTimerReset();}
+  const wst=document.getElementById('rd-fg-writing-subtype');if(wst)wst.style.display=type==='writing'?'':'none';}
+function setRdWritingSubtype(subtype){
+  document.querySelectorAll('.rd-subtype-btn').forEach(b=>b.classList.toggle('active',b.dataset.subtype===subtype));}
 
 function renderReadingHome(el,sliderHtml){
   const t=TODAY,d30=new Date(t);d30.setDate(d30.getDate()-30);const d30s=iso(d30);
@@ -8547,6 +8443,13 @@ function renderReadingHome(el,sliderHtml){
   const wkTotalMins=wkReadMins+wkWriteMins+wkEditMins;
   const _rdFmt=m=>m>=60?Math.floor(m/60)+'h'+(m%60?'\u202f'+String(m%60).padStart(2,'0')+'m':''):(m||0)+'m';
   const _rdPct=(n,t)=>t>0?Math.round(n/t*100):0;
+  // ── Writing sub-type breakdown (Character Study / Sensory Mapping / Narrative Writing) ──
+  const WSUB_LABELS={character_study:'Character Study',sensory_mapping:'Sensory Mapping',narrative_writing:'Narrative Writing'};
+  const wkWriteBySubtype={character_study:0,sensory_mapping:0,narrative_writing:0};
+  wkRd.filter(a=>a.activity_type==='writing').forEach(a=>{
+    const st=WSUB_LABELS[a.writing_subtype]?a.writing_subtype:'narrative_writing';
+    wkWriteBySubtype[st]+=(a.duration_min||0);
+  });
   const _DC=2*Math.PI*46;
   const _dSegs=wkTotalMins===0?[]:([{m:wkReadMins,c:'var(--accent)'},{m:wkWriteMins,c:'var(--rd-purple)'},{m:wkEditMins,c:'var(--success)'}].filter(s=>s.m>0));
   let _dOff=0;
@@ -8636,6 +8539,10 @@ function renderReadingHome(el,sliderHtml){
           <div class="rd-donut-leg-l"><div class="rd-donut-dot" style="background:var(--rd-purple)"></div><span class="rd-donut-lname">Writing</span></div>
           <div class="rd-donut-leg-r"><span class="rd-donut-ltime">${_rdFmt(wkWriteMins)}</span><span class="rd-donut-lpct">${wkTotalMins>0?_rdPct(wkWriteMins,wkTotalMins)+'%':''}</span></div>
         </div>
+        ${wkWriteMins>0?Object.keys(WSUB_LABELS).map(st=>`<div class="rd-donut-leg" style="padding-left:18px;border-bottom:none;padding-top:2px;padding-bottom:2px">
+          <div class="rd-donut-leg-l"><span style="font-size:11px;color:var(--text-2)">${WSUB_LABELS[st]}</span></div>
+          <div class="rd-donut-leg-r"><span class="rd-donut-ltime" style="font-size:11px;font-weight:600">${_rdFmt(wkWriteBySubtype[st])}</span></div>
+        </div>`).join(''):''}
         <div class="rd-donut-leg">
           <div class="rd-donut-leg-l"><div class="rd-donut-dot" style="background:var(--success)"></div><span class="rd-donut-lname">Editing</span></div>
           <div class="rd-donut-leg-r"><span class="rd-donut-ltime">${_rdFmt(wkEditMins)}</span><span class="rd-donut-lpct">${wkTotalMins>0?_rdPct(wkEditMins,wkTotalMins)+'%':''}</span></div>
@@ -8734,21 +8641,21 @@ function renderReadingLog(container){
   <form id="rd-form" onsubmit="saveReading(event)">
     <div class="fg"><label class="fl">Date</label><input type="date" class="fi" id="rd-date" value="${iso(TODAY)}" max="${iso(TODAY)}" autocomplete="off"></div>
     <div class="fg"><label class="fl">Activity type</label>
-      <div class="rd-type-row">
+      <div class="rd-type-row" id="rd-activity-type-row">
         <button type="button" class="rd-type-btn active" data-type="reading" onclick="setRdType('reading')">Reading</button>
         <button type="button" class="rd-type-btn" data-type="writing" onclick="setRdType('writing')">Writing</button>
         <button type="button" class="rd-type-btn" data-type="editing" onclick="setRdType('editing')">Editing</button>
       </div></div>
-    <div class="fg" id="rd-fg-book"><label class="fl">Book</label><input type="text" class="fi" id="rd-book" placeholder="Book title" list="rd-books-dl" autocomplete="on"></div>
-    <div class="fg"><label class="fl">Duration</label>
-      <div class="cal-timer-wrap">
-        <div class="rd-t-disp cal-timer-display" onclick="if(!_rdRunning&&_rdSec===0)rdTimerStart()">
-          <span class="rd-t-time cal-timer-time">00:00</span>
-          <div class="rd-t-btns cal-timer-btn-wrap"><button type="button" class="cal-timer-pill start" onclick="event.stopPropagation();rdTimerStart()"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>Start</button></div>
-        </div>
-        <div class="cal-timer-or">or enter manually</div>
-        <input type="number" class="fi" id="rd-dur" placeholder="Duration in minutes" min="1">
+    <div class="fg" id="rd-fg-writing-subtype" style="display:none"><label class="fl">Writing type</label>
+      <div class="rd-type-row">
+        <button type="button" class="rd-subtype-btn active" data-subtype="character_study" onclick="setRdWritingSubtype('character_study')">Character Study</button>
+        <button type="button" class="rd-subtype-btn" data-subtype="sensory_mapping" onclick="setRdWritingSubtype('sensory_mapping')">Sensory Mapping</button>
+        <button type="button" class="rd-subtype-btn" data-subtype="narrative_writing" onclick="setRdWritingSubtype('narrative_writing')">Narrative Writing</button>
       </div></div>
+    <div class="fg" id="rd-fg-book"><label class="fl">Book</label><input type="text" class="fi" id="rd-book" placeholder="Book title" list="rd-books-dl" autocomplete="on"></div>
+    <div class="fg"><label class="fl">Duration (minutes)</label>
+      <input type="number" class="fi" id="rd-dur" placeholder="Duration in minutes" min="1">
+    </div>
     <div class="fg" id="rd-fg-pages"><label class="fl">Pages read</label><input type="number" class="fi" id="rd-pages" placeholder="0" min="0"></div>
     <div class="fg" id="rd-fg-words" style="display:none"><label class="fl">Words written</label><input type="number" class="fi" id="rd-words" placeholder="0" min="0"></div>
     <div class="fg"><label class="fl">Notes</label><textarea class="fi" id="rd-notes" placeholder="How did it go?" rows="2" style="resize:vertical" maxlength="280"></textarea></div>
@@ -8759,13 +8666,12 @@ function renderReadingLog(container){
 function saveReading(e){
   e.preventDefault();
   const actType=document.querySelector('.rd-type-btn.active')?.dataset.type||'reading';
-  const dur=(parseInt(document.getElementById('rd-dur')?.value)||0)||(_rdMins()||0);
-  if(!dur){alert('Please enter a duration or use the timer.');return;}
-  if(_rdRunning){clearInterval(_rdIv);_rdIv=null;_rdRunning=false;}
+  const dur=parseInt(document.getElementById('rd-dur')?.value)||0;
+  if(!dur){alert('Please enter a duration.');return;}
   const act={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),type:'reading',activity_type:actType,date:document.getElementById('rd-date').value,duration_min:dur,notes:(document.getElementById('rd-notes')?.value||'').trim()};
   if(actType==='reading'){act.book_name=(document.getElementById('rd-book')?.value||'').trim();act.pages_read=parseInt(document.getElementById('rd-pages')?.value)||0;}
-  if(actType==='writing')act.words_written=parseInt(document.getElementById('rd-words')?.value)||0;
-  AppState.activities.push(act);saveState();rdTimerReset();
+  if(actType==='writing'){act.words_written=parseInt(document.getElementById('rd-words')?.value)||0;act.writing_subtype=document.querySelector('.rd-subtype-btn.active')?.dataset.subtype||'narrative_writing';}
+  AppState.activities.push(act);saveState();
   showToast('Session saved!');setLogMode('reading');}
 
 function renderLog(el){
@@ -8786,8 +8692,7 @@ function renderLog(el){
         <div class="fg"><label class="fl">Date</label><input type="date" class="fi" id="cal-date" value="${iso(TODAY)}" max="${iso(TODAY)}"></div>
         <div class="fg"><label class="fl">Workout type</label>
           <div class="rd-type-row">
-            <button type="button" class="cal-type-btn active" data-type="Pull" onclick="setCalType('Pull')">Pull</button>
-            <button type="button" class="cal-type-btn" data-type="Push" onclick="setCalType('Push')">Push</button>
+            <button type="button" class="cal-type-btn active" data-type="Pull & Push" onclick="setCalType('Pull & Push')">Pull &amp; Push</button>
             <button type="button" class="cal-type-btn" data-type="Prehab" onclick="setCalType('Prehab')">Prehab</button>
           </div>
         </div>
@@ -8799,20 +8704,8 @@ function renderLog(el){
         </div>
         ${buildPrehabChecklist()}
         <div class="fg">
-          <label class="fl">Duration</label>
-          <div class="cal-timer-wrap">
-            <div class="cal-timer-display" onclick="if(!_timerRunning&&_timerSec===0)timerStart();">
-              <span class="cal-timer-time">00:00</span>
-              <div class="cal-timer-btn-wrap">
-                <button type="button" class="cal-timer-pill start" onclick="event.stopPropagation();timerStart()">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>Start
-                </button>
-              </div>
-            </div>
-            <div class="cal-timer-or">or enter manually</div>
-            <input type="number" class="fi" id="cal-dur" placeholder="Duration in minutes" min="1"
-              style="margin-top:0">
-          </div>
+          <label class="fl">Duration (minutes)</label>
+          <input type="number" class="fi" id="cal-dur" placeholder="Duration in minutes" min="1">
         </div>
         <div class="fg">
           <label class="fl">RPE<span id="rpe-cal-badge" style="display:inline-flex;align-items:center;margin-left:8px;padding:1px 8px;border-radius:20px;font-size:11px;font-weight:700;border:1.5px solid var(--success);color:var(--success);background:color-mix(in oklab,var(--success) 10%,var(--bg-2));transition:all 200ms;letter-spacing:0;text-transform:none">5 · Moderate</span></label>
@@ -8839,7 +8732,7 @@ function renderLog(el){
   // init prehab toggle on cal form
   if(AppState.ui.logMode==='calisthenics') renderSavedWorkoutsList();
   const _wtSel=document.querySelector('.cal-type-btn.active');
-  if(_wtSel) togglePrehabForm(_wtSel.dataset.type||'Pull');
+  if(_wtSel) togglePrehabForm(_wtSel.dataset.type||'Pull & Push');
   // Pre-populate pace zone reference table with current zone boundaries
   setTimeout(function(){ if(typeof updateZoneFromPace==='function') updateZoneFromPace(null); }, 0);;
 }
@@ -8856,7 +8749,6 @@ function setHomeMode(mode){
   navigate('#home');
 }
 function setLogMode(mode){
-  timerReset();rdTimerReset(); // clear timers when switching modes
   AppState.ui.logMode=mode;
   saveState();
   const el=document.querySelector('#pg-log');
@@ -9177,82 +9069,6 @@ function phCount(){
 }
 
 
-/* ═══════════════════════════════════════════════════
-   WORKOUT TIMER (calisthenics)
-═══════════════════════════════════════════════════ */
-let _timerSec=0, _timerRunning=false, _timerInterval=null;
-
-function _timerFmt(s){
-  const h=Math.floor(s/3600);
-  const m=Math.floor((s%3600)/60);
-  const sec=s%60;
-  return h>0
-    ? `${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`
-    : `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
-}
-
-function _timerTick(){
-  _timerSec++;
-  const el=document.querySelector('.cal-timer-time');
-  if(el) el.textContent=_timerFmt(_timerSec);
-}
-
-function timerStart(){
-  if(_timerRunning) return;
-  _timerRunning=true;
-  _timerInterval=setInterval(_timerTick,1000);
-  const wrap=document.querySelector('.cal-timer-display');
-  if(wrap){wrap.classList.remove('paused');wrap.classList.add('running');}
-  _timerUpdateBtns();
-}
-
-function timerPause(){
-  if(!_timerRunning) return;
-  _timerRunning=false;
-  clearInterval(_timerInterval);_timerInterval=null;
-  const wrap=document.querySelector('.cal-timer-display');
-  if(wrap){wrap.classList.remove('running');wrap.classList.add('paused');}
-  _timerUpdateBtns();
-  // Sync elapsed minutes → manual duration field (round up to nearest minute)
-  const mins=Math.max(1,Math.ceil(_timerSec/60));
-  const durEl=document.querySelector('#cal-dur');
-  if(durEl&&!durEl.value) durEl.value=mins;
-}
-
-function timerReset(){
-  _timerRunning=false;
-  clearInterval(_timerInterval);_timerInterval=null;
-  _timerSec=0;
-  const el=document.querySelector('.cal-timer-time');
-  if(el) el.textContent='00:00';
-  const wrap=document.querySelector('.cal-timer-display');
-  if(wrap){wrap.classList.remove('running','paused');}
-  _timerUpdateBtns();
-}
-
-function _timerUpdateBtns(){
-  const bw=document.querySelector('.cal-timer-btn-wrap');
-  if(!bw) return;
-  if(_timerRunning){
-    bw.innerHTML=`<button type="button" class="cal-timer-pill pause" onclick="timerPause()">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>Pause</button>
-      <button type="button" class="cal-timer-pill reset" onclick="timerReset()">Reset</button>`;
-  } else if(_timerSec>0){
-    bw.innerHTML=`<button type="button" class="cal-timer-pill start" onclick="timerStart()">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>Resume</button>
-      <button type="button" class="cal-timer-pill reset" onclick="timerReset()">Reset</button>`;
-  } else {
-    bw.innerHTML=`<button type="button" class="cal-timer-pill start" onclick="timerStart()">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>Start</button>`;
-  }
-}
-
-function _timerGetMins(){
-  // Returns elapsed minutes (rounded up) if timer has been used, else null
-  return _timerSec>0 ? Math.max(1,Math.ceil(_timerSec/60)) : null;
-}
-
-
 /* =============================================================
    SAVED WORKOUT TEMPLATES
 ============================================================= */
@@ -9354,8 +9170,8 @@ function swRpeInput(id, val) {
 
 function saveWorkoutTemplate() {
   var btn = document.querySelector('.cal-type-btn.active');
-  var wt  = btn ? btn.dataset.type : 'Pull';
-  if(wt === 'Prehab') { alert('Templates are for Pull and Push workouts only.'); return; }
+  var wt  = btn ? btn.dataset.type : 'Pull & Push';
+  if(wt === 'Prehab') { alert('Templates are for Pull & Push workouts only.'); return; }
   var exercises = [];
   for(var i = 0; i < calExCount; i++) {
     var nm = document.getElementById('can-' + i);
@@ -9405,7 +9221,7 @@ function renderSavedWorkoutsList() {
   for(var i = 0; i < wks.length; i++) {
     var w    = wks[i];
     var type = (w.workout_type || '').toLowerCase();
-    var cls  = type === 'push' ? 'push' : type === 'pull' ? 'pull' : 'other';
+    var cls  = type.indexOf('pull')!==-1 ? 'pull' : type === 'push' ? 'push' : 'other';
     var lbl  = w.workout_type || 'WRK';
     var ec   = (w.exercises || []).length;
     var sub  = ec + ' exercise' + (ec !== 1 ? 's' : '');
@@ -9437,7 +9253,7 @@ function openSavedWorkout(id) {
 
   title.textContent = (w.workout_type || '') + ' Workout';
   var type = (w.workout_type || '').toLowerCase();
-  var cls  = type === 'push' ? 'push' : type === 'pull' ? 'pull' : 'other';
+  var cls  = type.indexOf('pull')!==-1 ? 'pull' : type === 'push' ? 'push' : 'other';
   var todayVal = iso(TODAY);
 
   // Build exercise rows with editable sets/reps + live set counter
@@ -9662,14 +9478,9 @@ function confirmDeleteTemplate() {
 
 function saveCalisthenics(e){
   e.preventDefault();
-  // Accept timer elapsed time OR manual field — one is required
-  const _manualDur=parseInt($('#cal-dur')?.value)||0;
-  const _timerMins=_timerGetMins()||0;
-  const dur=_manualDur||_timerMins;
-  if(!dur){alert('Please enter a duration or use the timer.');return;}
-  // stop timer if still running
-  if(_timerRunning){clearInterval(_timerInterval);_timerInterval=null;_timerRunning=false;}
-  const _wt=document.querySelector('.cal-type-btn.active')?.dataset.type||'Pull';
+  const dur=parseInt($('#cal-dur')?.value)||0;
+  if(!dur){alert('Please enter a duration.');return;}
+  const _wt=document.querySelector('.cal-type-btn.active')?.dataset.type||'Pull & Push';
   // ── Prehab: collect checkbox state, skip exercise builder ─────────
   if(_wt==='Prehab'){
     const cbs=document.querySelectorAll('#cal-prehab-section .ph-cb');
@@ -9708,7 +9519,7 @@ function saveCalisthenics(e){
   const act={
     id:genId(),type:'calisthenics',
     date:$('#cal-date').value,
-    workout_type:document.querySelector('.cal-type-btn.active')?.dataset.type||'Pull',
+    workout_type:document.querySelector('.cal-type-btn.active')?.dataset.type||'Pull & Push',
     exercises,pullups,dips,
     duration_min:dur,
     rpe:parseInt($('#rpe-cal')?.value)||5,
@@ -9973,7 +9784,7 @@ function renderHistList(){
         icoKey = rt==='Long Run'?'longrun':rt==='Tempo'?'tempo':rt==='Interval'?'interval':rt==='Race'?'race':(rt==='Recovery'||rt==='Shakeout')?'recovery':'run';
       } else if(a.type==='calisthenics'){
         const wt=_calWt;
-        if(wt==='Pull'){          c='var(--accent)';        icoKey='pull'; }
+        if(wt==='Pull & Push'||wt==='Pull'){ c='var(--accent)';        icoKey='pull'; }
         else if(wt==='Push'){     c='#8b5cf6';              icoKey='push'; }
         else if(wt==='Prehab'){   c=a.prehab_complete===false?'var(--gold)':'var(--success)'; icoKey='prehab'; }
         else {                    c='var(--accent)';         icoKey='pull'; }
@@ -11134,8 +10945,7 @@ function buildManualHTML(){
       <tr><th>Code</th><th>Session</th><th>Day</th></tr>
       <tr><td>SR</td><td>Short Run (Z2/Z3)</td><td>Tuesday / Thursday</td></tr>
       <tr><td>LR</td><td>Long Run (Z2)</td><td>Sunday</td></tr>
-      <tr><td>PC</td><td>Pull calisthenics</td><td>Monday</td></tr>
-      <tr><td>PL</td><td>Push / Leg strength</td><td>Wednesday / Friday</td></tr>
+      <tr><td>PP</td><td>Pull & Push calisthenics</td><td>Tuesday</td></tr>
     </table>
   `;
 
@@ -12239,8 +12049,8 @@ const PLAN_START='2026-04-11';
 const RACE_DATE ='2026-11-09';
 const WEEK_COUNT=31;
 const ZONE_FACTOR={Z1:1.0,Z2:1.5,Z3:2.5,Z4:3.5,Z5:5.0};
-const DAY_IDX={PC:1,SR:2,PL:3,LR:5,RACE:6};
-const STR_AU={PC:12,PL:18};
+const DAY_IDX={PP:1,SR:2,LR:5,RACE:6};
+const STR_AU={PP:30};
 const LS_KEY='marathon_log';
 
 const RAW_SCHEDULE=[
@@ -12287,9 +12097,8 @@ const SCHEDULE=RAW_SCHEDULE.map(function(raw,i){
   const mon=_shift(_w1Mon,i*7);
   const sd=function(di){return _toISO(_shift(mon,di));};
   const sessions=[];
-  sessions.push({date:sd(DAY_IDX.PC),dayIndex:DAY_IDX.PC,sessionType:'PC',auPlanned:STR_AU.PC});
+  sessions.push({date:sd(DAY_IDX.PP),dayIndex:DAY_IDX.PP,sessionType:'PP',auPlanned:STR_AU.PP});
   (function(){const{km,zone,type}=raw.sr;sessions.push({date:sd(DAY_IDX.SR),dayIndex:DAY_IDX.SR,sessionType:'SR',km,zone,type,auPlanned:km*ZONE_FACTOR[zone]});})();
-  sessions.push({date:sd(DAY_IDX.PL),dayIndex:DAY_IDX.PL,sessionType:'PL',auPlanned:STR_AU.PL});
   if(raw.lr){const{km,zone}=raw.lr;sessions.push({date:sd(DAY_IDX.LR),dayIndex:DAY_IDX.LR,sessionType:'LR',km,zone,auPlanned:km*ZONE_FACTOR[zone]});}
   if(raw.raceWeek){sessions.push({date:RACE_DATE,dayIndex:DAY_IDX.RACE,sessionType:'RACE',km:42.195,zone:'Z3',type:'Marathon',auPlanned:Math.round(42.195*ZONE_FACTOR.Z3*10)/10});}
   return Object.assign({},raw,{startDate:_toISO(mon),sessions});
@@ -12351,8 +12160,7 @@ const PLAN_PILL_COLORS={
   SR_Intervals:'#8b5cf6',
   SR_RacePace:'var(--accent)',
   SR_Shakeout:'var(--success)',
-  PC:'var(--accent)',
-  PL:'#8b5cf6',
+  PP:'var(--accent)',
   RACE:'var(--accent)',
 };
 function pillColor(sessionType,srType){
@@ -12421,11 +12229,8 @@ function pillLabel(type,km,zone,srType,isRepl){
   } else if(type==='SR'){
     name='Short Run & Prehab';
     detail=[kmStr,srType,zone].filter(Boolean).join(' · ');
-  } else if(type==='PC'){
-    name='Pull';
-    detail='';
-  } else if(type==='PL'){
-    name='Push';
+  } else if(type==='PP'){
+    name='Pull & Push';
     detail='';
   } else if(type==='RACE'){
     name='Race Day 🏁';
