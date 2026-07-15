@@ -6235,6 +6235,13 @@ function _queueCloudRetry(payload) {
     _cloudRetryTimer = null;
     const p = _cloudPending;
     if (!p) return;
+    // FIX: if the user signed out (or cloud was torn down) while a retry was
+    // pending, _saveCloud() returns false forever and the old code rescheduled
+    // itself indefinitely at the 120 s cap — a leaked repeating timer. There is
+    // nowhere to sync to when signed out, and localStorage is already
+    // authoritative, so drop the queue instead of spinning.
+    const C = window.Cloud;
+    if (!C || !C.ready || !C.user) { _cloudPending = null; _cloudRetryDelay = 5000; return; }
     const ok = await _saveCloud(p, true);
     if (ok) { _cloudPending = null; _cloudRetryDelay = 5000; }
     else    { _cloudRetryDelay = Math.min(_cloudRetryDelay*2, 120000); _queueCloudRetry(p); }
@@ -6545,14 +6552,28 @@ function computeACWR() {
   const ADECAY = Math.exp(-1 / 7);
   const CDECAY = Math.exp(-1 / 28);
   let acute = 0, chronic = 0;
-  // 56-day window: ≥8 time-constants for τ=7 and ≥2 for τ=28 — sufficient for stable initialisation
-  for (let i = 55; i >= 0; i--) {
+  // FIX (was a 56-day window): 56 days is only 2 time-constants for τ=28, which
+  // leaves the chronic EWMA converged to just 1-e^-2 = 86.5 % of its true value.
+  // Because ACWR = acute/chronic and the acute term (8 time-constants) IS fully
+  // converged, the ratio was systematically inflated by 1/0.8647 = +15.6 %:
+  // a perfectly steady athlete read 1.16 instead of 1.00, and a genuine "High
+  // Load" week (true ratio 1.34) read 1.50 and tripped the "Overload — reduce
+  // volume now" alarm. That biased every ACWR consumer: adaptPlan()'s >1.3 gate,
+  // getPlanHealth(), the missed-run fold gate, and getSafeWeeklyLoadCeiling().
+  // 180 days = 6.4 time-constants for τ=28 (0.17 % residual error) and matches
+  // the window computePMC() already uses.
+  const WINDOW_DAYS = 180;
+  // Pre-bucket loads by date: the window tripled, so avoid an O(window × N) scan.
+  const _loadByDate = Object.create(null);
+  AppState.activities.forEach(a => {
+    if (a.type !== 'run') return;                     // runs only — mirrors computePMC()
+    _loadByDate[a.date] = (_loadByDate[a.date] || 0) + (a.load_score != null ? a.load_score : computeSessionLoad(a));
+  });
+  for (let i = WINDOW_DAYS - 1; i >= 0; i--) {
     const d = new Date(TODAY);
     d.setDate(d.getDate() - i);
     const ds = iso(d);
-    const dayLoad = AppState.activities
-      .filter(a => a.date === ds && a.type === 'run')  // runs only — mirrors computePMC()
-      .reduce((s, a) => s + (a.load_score != null ? a.load_score : computeSessionLoad(a)), 0);
+    const dayLoad = _loadByDate[ds] || 0;
     acute   = acute   * ADECAY + dayLoad * (1 - ADECAY);
     chronic = chronic * CDECAY + dayLoad * (1 - CDECAY);
   }
@@ -7532,9 +7553,18 @@ function computeCTLTarget() {
   const weeksToRace = Math.ceil((gd-TODAY)/(7*86400000));
   const weeksToPeak = Math.max(weeksToRace - 3, 1);
 
-  const targetWeeklyLoad   = ctlTarget * 7;
-  const {chronic}          = computeACWR(); // avg weekly load over 28d
-  const maxSafeWeekly      = chronic * 1.3;
+  const targetWeeklyLoad   = ctlTarget * 7;                 // AU/week
+  // FIX: computeACWR().chronic is an EWMA of DAILY loads (AU/day), not a weekly
+  // total — the old comment ("avg weekly load over 28d") mis-stated its own
+  // variable and the old code did `chronic * 1.3`, producing an AU/day figure
+  // that was then min()'d against two AU/week figures (targetWeeklyLoad and
+  // maxIncreaseWeekly). The daily-unit term is ~7x smaller so it always won,
+  // pinning weeklyLoadTarget to roughly 1/7 of its intended value and making
+  // adaptPlan()'s Step-3 rescale factor jump discontinuously whenever the
+  // binding constraint switched between a daily-unit and a weekly-unit term.
+  // Multiply by 7 so all three terms are AU/week.
+  const {chronic}          = computeACWR(); // AU/day (EWMA, τ=28)
+  const maxSafeWeekly      = chronic * 7 * 1.3;             // AU/week
 
   const d7ago = iso(new Date(TODAY.getTime()-7*86400000));
   const prevWeekLoad = AppState.activities
@@ -11020,7 +11050,7 @@ function buildManualHTML(){
       <tr><td>Intermediate</td><td>155 AU/day</td><td>Sub-4 h marathon range</td></tr>
       <tr><td>Advanced</td><td>200 AU/day</td><td>Sub-3 h marathon range</td></tr>
     </table>
-    <div class="man-note">CTL only drops 2.35 %/day at rest. Two rest days costs ≈ 2 AU if you are at 100 — barely noticeable. Consistent training over weeks is what builds it.</div>
+    <div class="man-note">CTL only drops 2.35 %/day at rest. Two rest days costs ≈ 4.6 AU if you are at 100 — barely noticeable. Consistent training over weeks is what builds it.</div>
   `;
 
   const b_atl = `
@@ -11825,9 +11855,6 @@ function renderProfile(el){
   const OC='color-mix(in oklab,var(--gold) 12%,var(--bg-3))';
   const NC='color-mix(in oklab,var(--notification) 12%,var(--bg-3))';
 
-  const flLevels=['Beginner','Intermediate','Advanced'];
-  const flPills=flLevels.map(l=>`<button class="prof-pill${p.fitness_level===l?' active':''}" onclick="setFL('${l}')">${l}</button>`).join('');
-
   el.innerHTML=`<div class="prof-wrap">
 
     <!-- ── Hero card ──────────────────────────────────────── -->
@@ -11898,12 +11925,6 @@ function renderProfile(el){
     <div class="sec-hdr"><span class="sec-ttl">Cloud Sync</span></div>
     <div class="prof-card" id="prof-cloud-card">${_cloudSectionHtml()}</div>
 
-    <!-- ── Fitness level ──────────────────────────────────── -->
-    <div class="sec-hdr"><span class="sec-ttl">Fitness Level</span></div>
-    <div class="prof-card">
-      <div class="prof-pill-row">${flPills}</div>
-    </div>
-
     <!-- ── Appearance ─────────────────────────────────────── -->
     <div class="sec-hdr"><span class="sec-ttl">Appearance</span></div>
     <div class="prof-card">
@@ -11950,7 +11971,6 @@ function saveGF(f){
   const v=$('#ev')?.value; if(!v)return;
   AppState.profile.goal[f]=v; generatePlan(); saveState(); closeSheet(); navigate('#profile'); showToast('Updated!');
 }
-function setFL(l){ AppState.profile.fitness_level=l; saveState(); navigate('#profile'); showToast('Updated!'); }
 
 function confirmReset(){
   if(confirm("This will permanently delete all your activities, profile, and training plan. This cannot be undone.")){
